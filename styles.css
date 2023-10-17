@@ -60,3 +60,209 @@ footer ul li a {
 main {
   padding: 20px;
 }
+
+/*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+/*%%%%%%%%%% About Us Page %%%%%%%%%%%%*/
+/*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+
+.about {
+  text-align: center;
+  color: #444;
+}
+
+
+#founders {
+  width: 80vw;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+#caption {
+  text-align: left;
+  margin-left: 10vw;
+}
+
+/*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+/*%%%%%%%%%% Make Your Own %%%%%%%%%%%%*/
+/*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+
+/*columns (default view)*/
+
+.column {
+  float: left;
+  width: 33.33%;
+  text-align: center;
+  padding-top: 30vh;
+  padding-bottom: 40vh;
+  border-top: #333, 1px;
+  border-bottom: #333, 1px;
+}
+
+
+#left {
+  background-image: url(images/wax2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-left: #333, 1px;
+  
+}
+
+#center {
+  background-image: url(images/oils1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#right {
+  background-image: url(images/wicks1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-right: #333, 1px;
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+  
+}
+
+/*columns (default view)*/
+
+/*buttons*/
+
+.MYO {
+  padding: 6px;
+  border-radius: 20px;
+  border: #fff solid 1px;
+  font-family: sans-serif;
+  font-weight: 100;
+  outline: none; 
+  background-color: rgba(0,0,0,0.4); 
+  color: #fff; 
+  cursor: pointer;  
+  font-size: 14px;
+  display: inline-block;
+  transition: all 0.2s ease 0s;
+}
+
+.MYO:hover {
+  transform: scale(1.1,1.1);
+  background-color: #A9BA9D;
+}
+
+/*buttons*/
+
+/*popups*/
+
+.column .popup .overlay {
+  position: fixed;
+  top: 0vh;
+  left: 0vh;
+  width: 100vw;
+  height: 100vh;
+  background:rgba(0,0,0,0.7);
+  z-index:1;
+  display: none;
+}
+
+.column .popup .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition:all 0.3s ease in;
+  transform:translate(-50%, -50%) scale(0);
+  background-color: #fff;
+  color:#4c4c4c;
+  width: 60vw;
+  min-width: 450px;
+  height: 600px;
+  z-index: 2;
+  text-align: center;
+  padding:10px;
+  box-sizing:border-box;
+  border-radius: 5%;
+}
+
+.column .popup .x-out {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  color: #333;
+  font-size: 20px;
+  font-weight: 400;
+  transition: 0.14s ease;
+}
+
+.column .popup .x-out:hover {
+  transform: scale(1.1,1.1);
+  color:red;
+  cursor: pointer;
+}
+
+.column .popup.active .overlay {
+  display: block;
+}
+
+.column .popup.active .content {
+  transition:all 0.3s ease in;
+  transform:translate(-50%, -50%) scale(1);
+}
+
+/*popups*/
+
+/*popup forms*/
+
+
+.ingredients {
+  appearance: none;
+  height: 35px;
+  width: 35px;
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.1s ease-in;
+}
+
+.ingredients:hover {
+  background-color: #A9BA9D;
+  transform: scale(1.05,1.05);
+}
+
+.ingredients:checked {
+  background-color: #01411C;
+}
+
+.labl {
+  color: #4c4c4c;
+  font-size: 25px;
+  font-family: 'Poppins' sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.done {
+  padding: 6px;
+  border-radius: 20px;
+  border: #A9BA9D solid 1px;
+  font-family: sans-serif;
+  outline: none; 
+  background-color: rgba(0,0,0,0.4); 
+  color: #fff; 
+  cursor: pointer;  
+  font-size: 25px;
+  font-weight: 300;
+  font-family: 'Poppins' sans-serif;
+  display: inline-block;
+  transition: all 0.2s ease 0s;
+}
+
+.done:hover {
+  transform: scale(1.1,1.1);
+  background-color: #A9BA9D;
+}
+
+/*popup forms*/
