@@ -1,0 +1,189 @@
+<!DOCTYPE html> 
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Candle Business</title>
+    <link
+      rel="stylesheet"
+      href="styles.css" />
+    <style>
+        main {
+            background-color: #A9BA9D;
+            padding: 1px;
+        }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a
+        href="homepage.html"
+        id="logo-link">
+        <img
+          src="images/logo.png"
+          alt="Website Logo"
+          id="logo-image" />
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#">Catalog</a></li>
+          <li><a href="#">Make Your Own</a></li>
+
+          <li><a href="aboutUs.html">About Us</a></li>
+          <li><a href="#">Customer Review</a></li>
+
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Checkout</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+        <!--background images-->
+      <div class="row">
+        <div class="column" id="left">
+            <button class="MYO" onclick="togglePopup('wax')">Choose Your Waxes!</button>
+
+            <!--wax popup-->
+            <div class="popup" id="wax">
+                <div class="overlay"></div>
+                <div class="content">
+                    <div class="x-out" onclick="togglePopup('wax')">&#x2715;</div>
+                    <h1>Waxes</h1>
+                    <form id="waxList">
+                        <div class="mix">
+                            <input class="ingredients" type="checkbox" id="Paraffin">
+                            <label class="labl" for="Paraffin">Paraffin</label>
+                            <br><br>
+                            <input class="ingredients" type="checkbox" id="Soy">
+                            <label class="labl" for="Soy">Soy</label>
+                            <br><br>
+                            <input class="ingredients" type="checkbox" id="Beeswax">
+                            <label class="labl" for="Beeswax">Beeswax</label>
+                            <br><br>
+                            <input class="ingredients" type="checkbox" id="Coconut">
+                            <label class="labl" for="Coconut">Coconut</label>
+                            <br><br>
+                            <input class="ingredients" type="checkbox" id="Bayberry">
+                            <label class="labl" for="Bayberry">Bayberry</label>
+                            <br><br>
+
+                            <div class="done" id="doneWax" onclick="togglePopup('wax')">Confirm Waxes</div>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+
+            
+
+            
+            <!--wax popup-->
+        </div>
+
+
+        <div class="column" id="center">
+            <button class="MYO" onclick="togglePopup('oil')">Choose Your Oils!</button>
+
+            <!--oils popup-->
+            <div class="popup" id="oil">
+                <div class="overlay"></div>
+                <div class="content">
+                    <div class="x-out" onclick="togglePopup('oil')">&#x2715;</div>
+                    <h1>Oils</h1>
+                    <form id="oilList">
+                        <div class="mix">
+                            <input class="ingredients" type="checkbox"  id="Peppermint">
+                            <label class="labl" for="Peppermint">Peppermint</label>
+                            <br><br>
+                            <input class="ingredients" type="checkbox"  id="Lavender">
+                            <label class="labl" for="Lavender">Lavender</label>
+                            <br><br>
+                            <input class="ingredients" type="checkbox" id="Jasmine">
+                            <label class="labl" for="Jasmine">Jasmine</label>
+                            <br><br>
+                            <input class="ingredients" type="checkbox" id="Tea Tree">
+                            <label class="labl" for="Tea Tree">Tea Tree</label>
+                            <br><br>
+                            <input class="ingredients" type="checkbox" id="Lemongrass">
+                            <label class="labl" for="Lemongrass">Lemongrass</label>
+                            <br><br>
+
+                            <div class="done" id="doneOil" onclick="togglePopup('oil')">Confirm Oils</div>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+            <!--oils popup-->
+        </div>
+
+
+        <div class="column" id="right">
+            <button class="MYO" onclick="togglePopup('wick')">Choose Your Wick!</button>
+
+            <!--wicks popup-->
+            <div class="popup" id="wick">
+                <div class="overlay"></div>
+                <div class="content">
+                    <div class="x-out" onclick="togglePopup('wick')">&#x2715;</div>
+                    <h1>Wicks</h1>
+                    <form id="wickList">
+                        <div class="mix">
+                            <input class="ingredients" type="checkbox" id="Wood">
+                            <label class="labl" for="Wood">Wood</label>
+                            <br><br>
+                            <input class="ingredients" type="checkbox" id="Hemp">
+                            <label class="labl"for="Hemp">Hemp</label>
+                            <br><br>
+                            <input class="ingredients" type="checkbox" id="Cotton">
+                            <label class="labl" for="Cotton">Cotton</label>
+                            <br><br>
+                            <input class="ingredients" type="checkbox" id="Zinc Thread">
+                            <label class="labl" for="Zinc Thread">Zinc Thread</label>
+                            <br><br>
+                            <input class="ingredients" type="checkbox" id="Tin Core">
+                            <label class="labl" for="Tin Core">Tin Core</label>
+                            <br><br>
+
+                            <div class="done" id="doneWick" onclick="togglePopup('wick')">Confirm Wicks</div>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+            <!--wicks popup-->
+        </div>
+      </div>
+      <!--background images-->
+
+      <script>
+        function togglePopup(x){
+            document.getElementById(x).classList.toggle("active");
+        }
+      </script>
+
+      
+
+
+
+
+
+
+
+
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2023 Whispering Wax</p>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+        </ul>
+      </div>
+    </footer>
+  </body>
+</html>
