@@ -136,13 +136,13 @@ main {
   padding: 6px;
   border-radius: 20px;
   border: #fff solid 1px;
-  font-family: sans-serif;
+  font-family: 'Poppins' sans-serif;
   font-weight: 100;
   outline: none; 
   background-color: rgba(0,0,0,0.4); 
   color: #fff; 
   cursor: pointer;  
-  font-size: 14px;
+  font-size: 23px;
   display: inline-block;
   transition: all 0.2s ease 0s;
 }
@@ -248,7 +248,7 @@ main {
   padding: 6px;
   border-radius: 20px;
   border: #A9BA9D solid 1px;
-  font-family: sans-serif;
+  font-family: 'Poppins' sans-serif;
   outline: none; 
   background-color: rgba(0,0,0,0.4); 
   color: #fff; 
