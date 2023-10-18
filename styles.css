@@ -71,6 +71,18 @@ main {
   color: #444;
 }
 
+#ab2 {
+  text-align: center;
+  width: 70vw;
+  margin-left: 15vw;
+  margin-right: 15vw;
+}
+
+hr {
+  background-color: #444;
+  width: 100vw;
+}
+
 
 #founders {
   width: 80vw;
