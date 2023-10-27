@@ -1,0 +1,87 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #a9ba9d;
+  margin: 0;
+  padding: 0;
+}
+.contact-image {
+  margin-top: 0px;
+  max-height: 600px;
+  max-width: 100%;
+  border-radius: 3px;
+}
+.flex-container {
+  margin: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container {
+  width: 600px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  text-align: center;
+  margin-right: 10px;
+  min-width: 320px;
+  max-width: 100%;
+}
+@media (max-width: 700px) {
+  .flex-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+h1 {
+  color: #333;
+}
+
+form {
+  text-align: center;
+  margin-top: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 95%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  resize: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.name-email {
+  display: block;
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 49%;
+  display: inline-block;
+  box-sizing: border-box;
+}
+textarea {
+  height: 200px;
+}
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.get-in-touch span {
+  display: block;
+  margin: 10px 0px;
+}
