@@ -10,12 +10,222 @@
     <link
       rel="stylesheet"
       href="styles.css" />
+    <script src="http://code.jquery.com/jquery-1.4.4.min.js" type="text/javascript"></script>
     <style>
         main {
             background-color: #A9BA9D;
             padding: 0px;
         }
+        .column {
+          float: left;
+          width: 33.33%;
+          text-align: center;
+          padding-top: 40vh;
+          padding-bottom: 45vh;
+          border-top: #333, 1px;
+          border-bottom: #333, 1px;
+        }
+
+
+        #left {
+          background-image: url(images/wax2.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          border-left: #333, 1px;
+          
+        }
+
+        #center {
+          background-image: url(images/oils1.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        #right {
+          background-image: url(images/wicks1.jpg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          border-right: #333, 1px;
+        }
+
+
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+          
+        }
+
+        /*columns (default view)*/
+
+        /*buttons*/
+
+        .MYO {
+          padding: 6px;
+          border-radius: 20px;
+          border: #fff solid 1px;
+          font-family: 'Poppins' sans-serif;
+          font-weight: 100;
+          outline: none; 
+          background-color: rgba(0,0,0,0.4); 
+          color: #fff; 
+          cursor: pointer;  
+          font-size: 30px;
+          display: inline-block;
+          transition: all 0.2s ease 0s;
+          max-width: 30vw;
+        }
+
+        .MYO:hover {
+          transform: scale(1.05,1.05);
+          background-color: #A9BA9D;
+        }
+
+        /*buttons*/
+
+        /*popups*/
+
+        .column .popup .overlay {
+          position: fixed;
+          top: 0vh;
+          left: 0vh;
+          width: 100vw;
+          height: 100vh;
+          background:rgba(0,0,0,0.7);
+          z-index:1;
+          display: none;
+        }
+
+        .column .popup .content {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transition:all 0.3s ease in;
+          transform:translate(-50%, -50%) scale(0);
+          background-color: #fff;
+          color:#4c4c4c;
+          width: 60vw;
+          min-width: 450px;
+          height: 600px;
+          z-index: 2;
+          text-align: center;
+          padding:10px;
+          box-sizing:border-box;
+          border-radius: 5%;
+        }
+
+        .column .popup .x-out {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          width: 20px;
+          height: 20px;
+          color: #333;
+          font-size: 20px;
+          font-weight: 400;
+          transition: 0.14s ease;
+        }
+
+        .column .popup .x-out:hover {
+          transform: scale(1.1,1.1);
+          color:red;
+          cursor: pointer;
+        }
+
+        .column .popup.active .overlay {
+          display: block;
+        }
+
+        .column .popup.active .content {
+          transition:all 0.3s ease in;
+          transform:translate(-50%, -50%) scale(1);
+        }
+
+        /*popups*/
+
+        /*popup forms*/
+
+
+        .waxIngredients, .oilIngredients, .wickIngredients {
+          appearance: none;
+          height: 35px;
+          width: 35px;
+          background-color: rgba(0,0,0,0.4);
+          border-radius: 5px;
+          cursor: pointer;
+          transition: 0.1s ease-in;
+        }
+
+        .waxIngredients:hover, .oilIngredients:hover, .wickIngredients:hover {
+          background-color: #A9BA9D;
+          transform: scale(1.05,1.05);
+        }
+
+        .waxIngredients:checked, .oilIngredients:checked, .wickIngredients:checked {
+          background-color: #01411C;
+        }
+
+        .labl {
+          color: #4c4c4c;
+          font-size: 25px;
+          font-family: 'Poppins' sans-serif;
+          font-weight: 600;
+          cursor: pointer;
+        }
+
+        .done {
+          padding: 6px;
+          border-radius: 20px;
+          border: #A9BA9D solid 1px;
+          font-family: 'Poppins' sans-serif;
+          outline: none; 
+          background-color: rgba(0,0,0,0.4); 
+          color: #fff; 
+          cursor: pointer;  
+          font-size: 25px;
+          font-weight: 300;
+          font-family: 'Poppins' sans-serif;
+          display: inline-block;
+          transition: all 0.2s ease 0s;
+        }
+
+        .done:hover {
+          transform: scale(1.1,1.1);
+          background-color: #A9BA9D;
+        }
+
+        #btm {
+          position: relative;
+          width: 100%;
+        }
+
+        #finalize {
+          padding: 6px;
+          border-radius: 20px;
+          border: #fff solid 1px;
+          font-family: 'Poppins' sans-serif;
+          outline: none; 
+          background-color: rgba(0,0,0,0.4); 
+          color: #fff; 
+          cursor: pointer;  
+          font-size: 30px;
+          font-weight: 300;
+          font-family: 'Poppins' sans-serif;
+          display: inline-block;
+          transition: all 0.2s ease 0s;
+          right: 44vw;
+          bottom: 20px;
+          position: absolute;
+          /* left: 50%;
+          width: fit-content; */
+        }
+
+        #finalize:hover {
+          transform: scale(1.1,1.1);
+          background-color: #A9BA9D;
+        }
     </style>
+
   </head>
   <body>
     <header>
@@ -56,19 +266,19 @@
                     <div id="waxList">
                       <!--<form id="waxData">-->
                             <input class="waxIngredients" type="checkbox" id="Paraffin" value="paraffin">
-                            <label class="labl" for="Paraffin">Paraffin</label>
+                            <label class="labl" for="Paraffin">Paraffin: $4</label>
                             <br><br>
                             <input class="waxIngredients" type="checkbox" id="Soy" value="soy">
-                            <label class="labl" for="Soy">Soy</label>
+                            <label class="labl" for="Soy">Soy: $4</label>
                             <br><br>
                             <input class="waxIngredients" type="checkbox" id="Beeswax" value="beeswax">
-                            <label class="labl" for="Beeswax">Beeswax</label>
+                            <label class="labl" for="Beeswax">Beeswax: $5</label>
                             <br><br>
                             <input class="waxIngredients" type="checkbox" id="Coconut" value="coconut">
-                            <label class="labl" for="Coconut">Coconut</label>
+                            <label class="labl" for="Coconut">Coconut: $5</label>
                             <br><br>
                             <input class="waxIngredients" type="checkbox" id="Bayberry" value="bayberry">
-                            <label class="labl" for="Bayberry">Bayberry</label>
+                            <label class="labl" for="Bayberry">Bayberry: $6</label>
                             <br><br>
 
                             <button class="done" id="doneWax" onclick="togglePopup('wax')">Confirm Waxes</button>
@@ -94,19 +304,19 @@
                     <div id="oilList">
                       <!--<form id="oilData">-->
                             <input class="oilIngredients" type="checkbox"  id="Peppermint" value="peppermint">
-                            <label class="labl" for="Peppermint">Peppermint</label>
+                            <label class="labl" for="Peppermint">Peppermint: $3</label>
                             <br><br>
                             <input class="oilIngredients" type="checkbox"  id="Lavender" value="lavender">
-                            <label class="labl" for="Lavender">Lavender</label>
+                            <label class="labl" for="Lavender">Lavender: $3</label>
                             <br><br>
                             <input class="oilIngredients" type="checkbox" id="Jasmine" value="jasmine">
-                            <label class="labl" for="Jasmine">Jasmine</label>
+                            <label class="labl" for="Jasmine">Jasmine: $3</label>
                             <br><br>
                             <input class="oilIngredients" type="checkbox" id="Tea Tree" value="tea tree">
-                            <label class="labl" for="Tea Tree">Tea Tree</label>
+                            <label class="labl" for="Tea Tree">Tea Tree: $4</label>
                             <br><br>
                             <input class="oilIngredients" type="checkbox" id="Lemongrass" value="lemongrass">
-                            <label class="labl" for="Lemongrass">Lemongrass</label>
+                            <label class="labl" for="Lemongrass">Lemongrass: $4</label>
                             <br><br>
 
                             <button  class="done" id="doneOil" onclick="togglePopup('oil')">Confirm Oils</button>
@@ -132,19 +342,20 @@
                     <div id="wickList">
                         <!--<form id="wickData">-->
                             <input class="wickIngredients" type="checkbox" id="Wood" value="wood">
-                            <label class="labl" for="Wood">Wood</label>
+                            <label class="labl" for="Wood">Wood: $3</label>
                             <br><br>
                             <input class="wickIngredients" type="checkbox" id="Hemp" value="hemp">
-                            <label class="labl"for="Hemp">Hemp</label>
+                            <label class="labl"for="Hemp">Hemp: $3</label>
                             <br><br>
                             <input class="wickIngredients" type="checkbox" id="Cotton" value="cotton">
-                            <label class="labl" for="Cotton">Cotton</label>
+                            <label class="labl" for="Cotton">Cotton: $3</label>
                             <br><br>
                             <input class="wickIngredients" type="checkbox" id="Zinc Thread" value="zinc thread">
-                            <label class="labl" for="Zinc Thread">Zinc Thread</label>
+                            <label class="labl" for="Zinc Thread">Zinc Thread: $4</label>
                             <br><br>
                             <input class="wickIngredients" type="checkbox" id="Tin Core" value="tin core">
-                            <label class="labl" for="Tin Core">Tin Core</label>
+                            <label class="labl" for="Tin Core">Tin Core: $4
+                            </label>
                             <br><br>
 
                             <button  class="done" id="doneWick" onclick="togglePopup('wick');">Confirm Wicks</button>
@@ -162,7 +373,7 @@
 
 
       <div id="btm">
-        <button id="finalize">Finalize Ingredients!</button>
+        <button id="finalize">Add To Cart</button>
       </div>
 
       <script>
@@ -170,10 +381,26 @@
             document.getElementById(x).classList.toggle("active");
         }
 
+        
+
+        // var confWax = document.getElementById('doneWax');
+
+        // confWax.addEventListener('click', () => {
+        //   let waxSelection = document.get
+        // })
+
+        //var confOil = 3;
+
+        //var confWick = 3;
+
         var subAll = document.getElementById('finalize');
 
         subAll.addEventListener('click', () => {
           let box2 = document.querySelectorAll('input[type="checkbox"]:checked');
+          if(box2.length == 0){
+            $('#finalize').hide();
+            $('#finalize').fadeIn(500);
+          }
           for(let i=0; i<box2.length; i++) {
             console.log(box2[i].value);
           }
