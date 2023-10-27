@@ -13,7 +13,7 @@
     <style>
         main {
             background-color: #A9BA9D;
-            padding: 1px;
+            padding: 0px;
         }
     </style>
   </head>
@@ -53,34 +53,31 @@
                 <div class="content">
                     <div class="x-out" onclick="togglePopup('wax')">&#x2715;</div>
                     <h1>Waxes</h1>
-                    <form id="waxList">
-                        <div class="mix">
-                            <input class="ingredients" type="checkbox" id="Paraffin">
+                    <div id="waxList">
+                      <!--<form id="waxData">-->
+                            <input class="waxIngredients" type="checkbox" id="Paraffin" value="paraffin">
                             <label class="labl" for="Paraffin">Paraffin</label>
                             <br><br>
-                            <input class="ingredients" type="checkbox" id="Soy">
+                            <input class="waxIngredients" type="checkbox" id="Soy" value="soy">
                             <label class="labl" for="Soy">Soy</label>
                             <br><br>
-                            <input class="ingredients" type="checkbox" id="Beeswax">
+                            <input class="waxIngredients" type="checkbox" id="Beeswax" value="beeswax">
                             <label class="labl" for="Beeswax">Beeswax</label>
                             <br><br>
-                            <input class="ingredients" type="checkbox" id="Coconut">
+                            <input class="waxIngredients" type="checkbox" id="Coconut" value="coconut">
                             <label class="labl" for="Coconut">Coconut</label>
                             <br><br>
-                            <input class="ingredients" type="checkbox" id="Bayberry">
+                            <input class="waxIngredients" type="checkbox" id="Bayberry" value="bayberry">
                             <label class="labl" for="Bayberry">Bayberry</label>
                             <br><br>
 
-                            <div class="done" id="doneWax" onclick="togglePopup('wax')">Confirm Waxes</div>
-                        </div>
+                            <button class="done" id="doneWax" onclick="togglePopup('wax')">Confirm Waxes</button>
+                      <!--</form>--> 
                         
-                    </form>
+                    </div>
                 </div>
             </div>
-
-            
-
-            
+            <br><br>
             <!--wax popup-->
         </div>
 
@@ -94,31 +91,32 @@
                 <div class="content">
                     <div class="x-out" onclick="togglePopup('oil')">&#x2715;</div>
                     <h1>Oils</h1>
-                    <form id="oilList">
-                        <div class="mix">
-                            <input class="ingredients" type="checkbox"  id="Peppermint">
+                    <div id="oilList">
+                      <!--<form id="oilData">-->
+                            <input class="oilIngredients" type="checkbox"  id="Peppermint" value="peppermint">
                             <label class="labl" for="Peppermint">Peppermint</label>
                             <br><br>
-                            <input class="ingredients" type="checkbox"  id="Lavender">
+                            <input class="oilIngredients" type="checkbox"  id="Lavender" value="lavender">
                             <label class="labl" for="Lavender">Lavender</label>
                             <br><br>
-                            <input class="ingredients" type="checkbox" id="Jasmine">
+                            <input class="oilIngredients" type="checkbox" id="Jasmine" value="jasmine">
                             <label class="labl" for="Jasmine">Jasmine</label>
                             <br><br>
-                            <input class="ingredients" type="checkbox" id="Tea Tree">
+                            <input class="oilIngredients" type="checkbox" id="Tea Tree" value="tea tree">
                             <label class="labl" for="Tea Tree">Tea Tree</label>
                             <br><br>
-                            <input class="ingredients" type="checkbox" id="Lemongrass">
+                            <input class="oilIngredients" type="checkbox" id="Lemongrass" value="lemongrass">
                             <label class="labl" for="Lemongrass">Lemongrass</label>
                             <br><br>
 
-                            <div class="done" id="doneOil" onclick="togglePopup('oil')">Confirm Oils</div>
-                        </div>
+                            <button  class="done" id="doneOil" onclick="togglePopup('oil')">Confirm Oils</button>
+                      <!--</form>-->  
                         
-                    </form>
+                    </div>
                 </div>
             </div>
             <!--oils popup-->
+            <br><br>
         </div>
 
 
@@ -131,48 +129,60 @@
                 <div class="content">
                     <div class="x-out" onclick="togglePopup('wick')">&#x2715;</div>
                     <h1>Wicks</h1>
-                    <form id="wickList">
-                        <div class="mix">
-                            <input class="ingredients" type="checkbox" id="Wood">
+                    <div id="wickList">
+                        <!--<form id="wickData">-->
+                            <input class="wickIngredients" type="checkbox" id="Wood" value="wood">
                             <label class="labl" for="Wood">Wood</label>
                             <br><br>
-                            <input class="ingredients" type="checkbox" id="Hemp">
+                            <input class="wickIngredients" type="checkbox" id="Hemp" value="hemp">
                             <label class="labl"for="Hemp">Hemp</label>
                             <br><br>
-                            <input class="ingredients" type="checkbox" id="Cotton">
+                            <input class="wickIngredients" type="checkbox" id="Cotton" value="cotton">
                             <label class="labl" for="Cotton">Cotton</label>
                             <br><br>
-                            <input class="ingredients" type="checkbox" id="Zinc Thread">
+                            <input class="wickIngredients" type="checkbox" id="Zinc Thread" value="zinc thread">
                             <label class="labl" for="Zinc Thread">Zinc Thread</label>
                             <br><br>
-                            <input class="ingredients" type="checkbox" id="Tin Core">
+                            <input class="wickIngredients" type="checkbox" id="Tin Core" value="tin core">
                             <label class="labl" for="Tin Core">Tin Core</label>
                             <br><br>
 
-                            <div class="done" id="doneWick" onclick="togglePopup('wick')">Confirm Wicks</div>
-                        </div>
+                            <button  class="done" id="doneWick" onclick="togglePopup('wick');">Confirm Wicks</button>
+                          <!--</form>-->
                         
-                    </form>
+                      </div>
                 </div>
             </div>
             <!--wicks popup-->
+            <br><br>
         </div>
+        
       </div>
       <!--background images-->
+
+
+      <div id="btm">
+        <button id="finalize">Finalize Ingredients!</button>
+      </div>
 
       <script>
         function togglePopup(x){
             document.getElementById(x).classList.toggle("active");
         }
+
+        var subAll = document.getElementById('finalize');
+
+        subAll.addEventListener('click', () => {
+          let box2 = document.querySelectorAll('input[type="checkbox"]:checked');
+          for(let i=0; i<box2.length; i++) {
+            console.log(box2[i].value);
+          }
+          
+        })
+
+
+        
       </script>
-
-      
-
-
-
-
-
-
 
 
     </main>

@@ -83,16 +83,33 @@ hr {
 }
 
 
-#founders {
+#img1, #img2 {
   width: 80vw;
   margin-left: 10vw;
   margin-right: 10vw;
+  max-height: 50vh;
+  max-width: 600px;
+  position: relative;
 }
 
-#caption {
-  text-align: left;
-  margin-left: 10vw;
+#img2 {
+  display: none;
 }
+
+
+
+#caption {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 300;
+  transition: 0.1s ease-in;
+}
+
+#caption:hover {
+  transform: scale(1.02, 1.02);
+  color:#333;
+}
+
 
 /*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 /*%%%%%%%%%% Make Your Own %%%%%%%%%%%%*/
@@ -157,10 +174,11 @@ hr {
   font-size: 23px;
   display: inline-block;
   transition: all 0.2s ease 0s;
+  max-width: 30vw;
 }
 
 .MYO:hover {
-  transform: scale(1.1,1.1);
+  transform: scale(1.05,1.05);
   background-color: #A9BA9D;
 }
 
@@ -229,7 +247,7 @@ hr {
 /*popup forms*/
 
 
-.ingredients {
+.waxIngredients, .oilIngredients, .wickIngredients {
   appearance: none;
   height: 35px;
   width: 35px;
@@ -239,12 +257,12 @@ hr {
   transition: 0.1s ease-in;
 }
 
-.ingredients:hover {
+.waxIngredients:hover, .oilIngredients:hover, .wickIngredients:hover {
   background-color: #A9BA9D;
   transform: scale(1.05,1.05);
 }
 
-.ingredients:checked {
+.waxIngredients:checked, .oilIngredients:checked, .wickIngredients:checked {
   background-color: #01411C;
 }
 
@@ -273,6 +291,35 @@ hr {
 }
 
 .done:hover {
+  transform: scale(1.1,1.1);
+  background-color: #A9BA9D;
+}
+
+#btm {
+  position: relative;
+}
+
+#finalize {
+  padding: 6px;
+  border-radius: 20px;
+  border: #fff solid 1px;
+  font-family: 'Poppins' sans-serif;
+  outline: none; 
+  background-color: rgba(0,0,0,0.4); 
+  color: #fff; 
+  cursor: pointer;  
+  font-size: 20px;
+  font-weight: 300;
+  font-family: 'Poppins' sans-serif;
+  display: inline-block;
+  transition: all 0.2s ease 0s;
+  max-width: 20vw;
+  right: 39vw;
+  bottom: 20px;
+  position: absolute;
+}
+
+#finalize:hover {
   transform: scale(1.1,1.1);
   background-color: #A9BA9D;
 }
