@@ -1,0 +1,162 @@
+<!DOCTYPE html> 
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Candle Business</title>
+    <link
+      rel="stylesheet"
+      href="styles.css" />
+    
+    <style>
+        main ul {
+            border: 1px solid black;
+            width: 100%; height: fit-content;
+            padding: 0;
+            display: flex; flex-wrap: wrap; flex-direction: row;
+            justify-content: center; align-items: center;
+
+        }
+        main ul li {
+            list-style-type: none;
+            margin: 5px;
+            width: 450px; max-width: 33%; height: 200px;
+            border: 1px solid red;
+            border-radius: 20px;
+        }
+
+        main ul li:hover {
+            background-color: rgba(0, 0, 0, 0.029);
+        }
+
+        @media (max-width: 768px) {
+            main ul {
+                flex-direction: column;
+            }
+        }
+
+        .modal {
+            background-color: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            transition: all 0.3s ease-in-out;
+            z-index: -1;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-inner {
+            background-color: white;
+            border-radius: 5%;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.307);
+            padding: 15px 25px;
+            /* text-align: center; */
+            width: fit-content;
+        }
+
+        .modal.open {
+            opacity: 1;
+            z-index: 999;
+        }
+
+        #product_info{
+            width: 60vw;
+            min-width: 225px;
+            height: 600px;
+            border: black 1px solid;
+            border-radius: 30px;
+            display: flex;
+        }
+
+        #product_info #image {
+            border: 1px red solid;
+            height: inherit; width: 50%;
+            border-radius: 30px 0 0 30px;
+            /* padding: 10px; */
+        }
+
+        #product_info #info {
+            border: 1px green solid;
+            height: inherit; width: 50%;
+            border-radius: 0 30px 30px 0;
+            /* padding: 10px; */
+        }
+
+
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> 
+    
+  </head>
+  <body>
+    <header>
+      <a
+        href="#"
+        id="logo-link">
+        <img
+          src="images/logo.png"
+          alt="Website Logo"
+          id="logo-image" />
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#">Catalog</a></li>
+          <li><a href="makeYourOwn.html">Make Your Own</a></li>
+
+          <li><a href="aboutUs.html">About Us</a></li>
+          <li><a href="#">Customer Review</a></li>
+
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Checkout</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="slideshow" style="text-align: center;"> Images slideshow here </div>
+      <div style="display: flex; justify-content: center;"> <h1 style=" border-bottom: 3px black solid; width: fit-content;">Products</h1></div>
+      <ul id="catalog"></ul>
+
+      <div class="modal" id="modal">
+        <div class="modal-inner">
+            <div id="product_info">
+                <div id="image">image here</div>
+                <div id="info">
+                    <h2>TEST</h2>
+                    <p>Description</p>
+                    <div class="quantity-control">
+                        <button class="quantity-button subtract">-</button>
+                        <input type="text" class="quantity-input" value="0" style="width: 20px; text-align: center;">
+                        <button class="quantity-button add">+</button>
+                    </div>
+                    <button id="add_to_cart">Add To Cart</button>
+                </div>
+
+            </div>
+            <button id="closeModal">Close</button>
+        </div>
+      </div>
+     
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2023 Whispering Wax</p>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="catalog_and_checkout.js"></script>
+  </body>
+</html>
