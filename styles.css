@@ -1,4 +1,5 @@
 header {
+  font-family: "Poppins" sans-serif;
   background-color: #a9ba9d;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -7,9 +8,10 @@ header {
   display: flex;
   justify-content: space-between;
 }
+
 #logo-image {
-  width: 150px; /* Set the width of the logo */
-  height: auto; /* Automatically adjust the height to maintain aspect ratio */
+  width: 150px;
+  height: auto;
   display: block;
   margin: 0 auto;
 }
@@ -29,17 +31,17 @@ header {
 .menu {
   position: fixed;
   top: 0;
-  left: -250px; /* Initial position is outside of the viewport */
+  left: -250px;
   width: 250px;
   max-width: 50%;
   height: 100%;
   background-color: rgba(118, 118, 118, 0.906);
   color: #fff;
-  transition: left 0.3s; /* Smooth transition for sliding effect */
+  transition: left 0.3s;
   overflow: hidden;
 }
 .menu.open {
-  left: 0; /* Slide in from the left when the "open" class is applied */
+  left: 0;
 }
 
 .menu ul {
@@ -50,14 +52,35 @@ header {
 .menu li {
   padding: 10px;
 }
+.menu h2 {
+  font-size: 36px;
+}
 
 .menu a {
+  font-size: 24px;
   text-decoration: none;
+  text-align: left;
   color: #fff;
   display: block;
 }
+@media (max-width: 390px) {
+  .menu a {
+    font-size: 18px;
+  }
+}
+
+.menu a:hover {
+  color: #cacaca;
+}
+
 #toggle-button {
-  border-radius: 25px;
+  background-color: #ff1d1d;
+  color: #fff;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 20px;
 }
 
 .cart-count {
@@ -71,27 +94,10 @@ header {
   font-size: 10px;
 }
 
-/* nav ul {
-  display: inline-flex;
-  list-style: none;
-  padding: 0;
-} */
-
 .logo {
   background-image: url("images/logo.png");
 }
-/* nav ul li {
-  display: inline;
-  margin-right: 20px;
-} */
 
-/* nav ul li a {
-  text-decoration: none;
-  font-size: 24px;
-  color: #fff;
-} */
-
-/* Apply a footer style */
 footer {
   background-color: #002400;
   color: #fff;
@@ -99,7 +105,6 @@ footer {
   text-align: center;
 }
 
-/* Style the footer links */
 footer ul {
   list-style: none;
 }
@@ -113,280 +118,6 @@ footer ul li a {
   text-decoration: none;
   color: #fff;
 }
-
-/* Style the main content area */
 main {
   padding: 20px;
 }
-
-/*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
-/*%%%%%%%%%% CONTACT PAGE %%%%%%%%%%%%*/
-/*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f1f1f1;
-  margin: 0;
-  padding: 0;
-}
-
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  text-align: center;
-}
-
-h1 {
-  color: #333;
-}
-
-form {
-  text-align: left;
-  margin-top: 20px;
-}
-
-label {
-  display: block;
-  margin-top: 10px;
-  font-weight: bold;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
-
-button {
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-/*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
-/*%%%%%%%%%% About Us Page %%%%%%%%%%%%*/
-/*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
-
-.about {
-  text-align: center;
-  color: #444;
-}
-
-#ab2 {
-  text-align: center;
-  width: 70vw;
-  margin-left: 15vw;
-  margin-right: 15vw;
-}
-
-hr {
-  background-color: #444;
-  width: 100vw;
-}
-
-#founders {
-  width: 80vw;
-  margin-left: 10vw;
-  margin-right: 10vw;
-}
-
-#caption {
-  text-align: left;
-  margin-left: 10vw;
-}
-
-/*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
-/*%%%%%%%%%% Make Your Own %%%%%%%%%%%%*/
-/*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
-
-/*columns (default view)*/
-
-.column {
-  float: left;
-  width: 33.33%;
-  text-align: center;
-  padding-top: 30vh;
-  padding-bottom: 40vh;
-  border-top: #333, 1px;
-  border-bottom: #333, 1px;
-}
-
-#left {
-  background-image: url(images/wax2.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-left: #333, 1px;
-}
-
-#center {
-  background-image: url(images/oils1.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-#right {
-  background-image: url(images/wicks1.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-right: #333, 1px;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/*columns (default view)*/
-
-/*buttons*/
-
-.MYO {
-  padding: 6px;
-  border-radius: 20px;
-  border: #fff solid 1px;
-  font-family: "Poppins" sans-serif;
-  font-weight: 100;
-  outline: none;
-  background-color: rgba(0, 0, 0, 0.4);
-  color: #fff;
-  cursor: pointer;
-  font-size: 23px;
-  display: inline-block;
-  transition: all 0.2s ease 0s;
-}
-
-.MYO:hover {
-  transform: scale(1.1, 1.1);
-  background-color: #a9ba9d;
-}
-
-/*buttons*/
-
-/*popups*/
-
-.column .popup .overlay {
-  position: fixed;
-  top: 0vh;
-  left: 0vh;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 1;
-  display: none;
-}
-
-.column .popup .content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transition: all 0.3s ease in;
-  transform: translate(-50%, -50%) scale(0);
-  background-color: #fff;
-  color: #4c4c4c;
-  width: 60vw;
-  min-width: 450px;
-  height: 600px;
-  z-index: 2;
-  text-align: center;
-  padding: 10px;
-  box-sizing: border-box;
-  border-radius: 5%;
-}
-
-.column .popup .x-out {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 20px;
-  height: 20px;
-  color: #333;
-  font-size: 20px;
-  font-weight: 400;
-  transition: 0.14s ease;
-}
-
-.column .popup .x-out:hover {
-  transform: scale(1.1, 1.1);
-  color: red;
-  cursor: pointer;
-}
-
-.column .popup.active .overlay {
-  display: block;
-}
-
-.column .popup.active .content {
-  transition: all 0.3s ease in;
-  transform: translate(-50%, -50%) scale(1);
-}
-
-/*popups*/
-
-/*popup forms*/
-
-.ingredients {
-  appearance: none;
-  height: 35px;
-  width: 35px;
-  background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.1s ease-in;
-}
-
-.ingredients:hover {
-  background-color: #a9ba9d;
-  transform: scale(1.05, 1.05);
-}
-
-.ingredients:checked {
-  background-color: #01411c;
-}
-
-.labl {
-  color: #4c4c4c;
-  font-size: 25px;
-  font-family: "Poppins" sans-serif;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.done {
-  padding: 6px;
-  border-radius: 20px;
-  border: #a9ba9d solid 1px;
-  font-family: "Poppins" sans-serif;
-  outline: none;
-  background-color: rgba(0, 0, 0, 0.4);
-  color: #fff;
-  cursor: pointer;
-  font-size: 25px;
-  font-weight: 300;
-  font-family: "Poppins" sans-serif;
-  display: inline-block;
-  transition: all 0.2s ease 0s;
-}
-
-.done:hover {
-  transform: scale(1.1, 1.1);
-  background-color: #a9ba9d;
-}
-
-/*popup forms*/

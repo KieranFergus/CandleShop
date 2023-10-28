@@ -5,22 +5,132 @@
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #a9ba9d;
+        margin: 0;
+        padding: 0;
+      }
+      .contact-image {
+        margin-top: 0px;
+        height: auto;
+        max-width: 100%;
+        border-radius: 3px;
+      }
+      .flex-container {
+        margin: 5px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .container {
+        width: 600px;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        text-align: center;
+        margin-right: 10px;
+        min-width: 320px;
+        max-width: 100%;
+      }
+      @media (max-width: 700px) {
+        .flex-container {
+          flex-direction: column;
+          align-items: center;
+        }
+        .container {
+          min-width: none;
+        }
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      form {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      input[id="name"],
+      input[id="email"],
+      textarea {
+        width: 95%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        resize: none;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .name-email {
+        display: block;
+      }
+
+      input[id="name"],
+      input[id="email"] {
+        width: 49%;
+        display: inline-block;
+        box-sizing: border-box;
+      }
+      textarea {
+        height: 200px;
+      }
+      .submit {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+
+      .submit:hover {
+        background-color: #0056b3;
+      }
+
+      .get-in-touch span {
+        display: block;
+        margin: 10px 0px;
+      }
+    </style>
     <link
       rel="stylesheet"
-      href="styles_contact.css" />
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="styles.css" />
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Poppins&display=swap
+    (https://fonts.googleapis.com/css?family=Poppins&display=swap)"">
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"></script>
+
     <title>Contact Us</title>
   </head>
   <body>
-    <!-- <header>
-      <a
-        href="#"
-        id="logo-link">
-        <img
-          src="images/logo.png"
-          alt="Website Logo"
-          id="logo-image" />
-      </a>
-      <nav>
+    <header>
+      <div class="menu-icon">
+        <i class="fas fa-bars"></i>
+      </div>
+      <script>
+        $(document).ready(() => {
+          $(".menu-icon").on("click", () => {
+            $(".menu").toggleClass("open");
+            return false;
+          });
+          $("#toggle-button").on("click", () => {
+            $(".menu").toggleClass("open");
+          });
+        });
+      </script>
+      <nav class="menu">
+        <h2>Menu</h2>
         <ul>
           <li><a href="#">Catalog</a></li>
           <li><a href="makeYourOwn.html">Make Your Own</a></li>
@@ -30,42 +140,58 @@
 
           <li><a href="#">Contact</a></li>
           <li><a href="#">Checkout</a></li>
+          <button id="toggle-button">Close</button>
         </ul>
       </nav>
-    </header> -->
+      <a
+        href="#"
+        id="logo-link">
+        <img
+          src="images/TRANSPARENT.png"
+          alt="Website Logo"
+          id="logo-image" />
+      </a>
+      <div class="cart-icon">
+        <div class="cart-icon">
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <span class="cart-count">0</span>
+      </div>
+    </header>
+    <script src="contact_script.js"></script>
     <div class="flex-container">
       <div class="container">
         <h1>Any Questions?</h1>
         <div class="get-in-touch">
-          <span class="address">123 Main Street, Norwell Ma</span>
-          <span class="socials">Cooper</span>
+          <span class="address">75 Packard Ave. Somerville, MA</span>
+          <span class="socials">Follow us on Facebook and Instagram!</span>
         </div>
         <p>Fill out this form to get in touch with us.</p>
         <form
+          id="contact-form"
           action="#"
           method="post">
           <div class="name-email">
             <input
-              type="text"
               id="name"
               name="name"
-              placeholder="Name"
-              required />
+              placeholder="Name" />
 
             <input
-              type="email"
               id="email"
               name="email"
-              placeholder="Email"
-              required />
+              placeholder="Email" />
           </div>
           <textarea
             id="message"
             name="message"
-            placeholder="Message"
-            required></textarea>
+            placeholder="Message"></textarea>
 
-          <button type="submit">Submit</button>
+          <button
+            class="submit"
+            id="submit">
+            Submit
+          </button>
         </form>
       </div>
       <img
@@ -73,5 +199,14 @@
         src="homepage/midterm/candle3.jpg"
         alt="candle" />
     </div>
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2023 Whispering Wax</p>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>
