@@ -6,6 +6,7 @@ function product(name, cost, qty, description){
     this.description = description;
 }
 
+
 catalog = new Array (
     new product("Tranquil Twilight", 12, 0, "This candle offers a soothing blend of lavender and chamomile scents, perfect for winding down after a long day. Let its gentle fragrance envelop you in tranquility."),
     new product("Citrus Serenity", 15, 0, "Enjoy the refreshing and invigorating aroma of zesty citrus fruits. This candle brings a burst of energy to any room, creating a sense of serenity and awakening your senses."),
@@ -19,7 +20,7 @@ catalog = new Array (
 );
 
 function createCatalog(){
-    var container = $("#catalog");
+    let container = $("#catalog");
 
     for (i = 0; i < 9; i++) {
         var item = $("<li>").text(catalog[i].name);
@@ -28,13 +29,27 @@ function createCatalog(){
     }
 }
 
+// function createCheckout(){
+//     let container = $("#checkout"); 
+
+// }
+
+var cart = [];
+
+// window.addEventListener('load', () => {
+//     const params = (new URL(document.location)).searchParams;
+//     cart = params.get("cart")
+// })
+localStorage.clear();
 
 $(document).ready(function(){
+
     createCatalog();
-    
+    $(".cart-count").html(cart.length)
+
     var currProduct;
     var quantityInput = $('.quantity-input');
-    
+    var currentQty = 0;
     
     // Opens and Closes the Modal
     $("main ul li").on('click', function(){
@@ -61,23 +76,55 @@ $(document).ready(function(){
 
     // adding products from catalog to cart
     $(".subtract").on("click", function() {
-        const currentQty = parseInt(quantityInput.val())
+        currentQty = parseInt(quantityInput.val())
         if (currentQty > 0) {
-            quantityInput.val(currentQty - 1);
+            currentQty =currentQty - 1;
+
+            quantityInput.val(currentQty);
         }
         
     })
     
     $(".add").on("click", function() {
-        const currentQty = parseInt(quantityInput.val())
-        quantityInput.val(currentQty + 1);
+        currentQty = parseInt(quantityInput.val());
+        currentQty =currentQty + 1;
+        quantityInput.val(currentQty);
         
     })
     
     $("#add_to_cart").on("click", function(){
         currProduct.quantity = parseInt(quantityInput.val());
-        console.log(currProduct)
+        console.log(currentQty)
+        
+        if (currProduct.quantity > 0) {
+            console.log("length is before: " + cart.length)
+            console.log("index of item: " + cart.indexOf(currProduct))
+            let cartIndex = cart.indexOf(currProduct);
+            if (cartIndex === -1) {
+                cart.push(currProduct);
+                storeCart();
+            } else {
+                cart[cartIndex] = currProduct
+                storeCart();
+            }
+            console.log("length is after: " + cart.length)
+            // console.log(cart[cartIndex])
+
+            $(".cart-count").html(cart.length)
+            // storeCart();
+            cart.forEach((item) =>{
+                console.log(item)
+            })
+            
+        }
+
+        
     })
 
-
 })
+
+//Storing cart in local memory  
+function storeCart(){
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+}

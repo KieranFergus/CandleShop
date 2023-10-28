@@ -9,6 +9,17 @@
     <link
       rel="stylesheet"
       href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"></script>
+  </head>
     
     <style>
         main ul {
@@ -92,33 +103,52 @@
 
 
     </style>
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> 
     
   </head>
   <body>
     <header>
-      <a
-        href="#"
-        id="logo-link">
-        <img
-          src="images/logo.png"
-          alt="Website Logo"
-          id="logo-image" />
-      </a>
-      <nav>
-        <ul>
-          <li><a href="#">Catalog</a></li>
-          <li><a href="makeYourOwn.html">Make Your Own</a></li>
-
-          <li><a href="aboutUs.html">About Us</a></li>
-          <li><a href="#">Customer Review</a></li>
-
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Checkout</a></li>
-        </ul>
-      </nav>
-    </header>
+        <div class="menu-icon">
+          <i class="fas fa-bars"></i>
+        </div>
+        <script>
+          $(document).ready(() => {
+            $(".menu-icon").on("click", () => {
+              $(".menu").toggleClass("open");
+              return false;
+            });
+            $("#toggle-button").on("click", () => {
+              $(".menu").toggleClass("open");
+            });
+          });
+        </script>
+        <nav class="menu">
+          <ul>
+            <li><a href="#">Catalog</a></li>
+            <li><a href="makeYourOwn.html">Make Your Own</a></li>
+  
+            <li><a href="aboutUs.html">About Us</a></li>
+            <li><a href="#">Customer Review</a></li>
+  
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Checkout</a></li>
+            <button id="toggle-button">Close</button>
+          </ul>
+        </nav>
+        <a
+          href="#"
+          id="logo-link">
+          <img
+            src="images/TRANSPARENT.png"
+            alt="Website Logo"
+            id="logo-image" />
+        </a>
+        <div class="cart-icon">
+          <div class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <span class="cart-count"></span>
+        </div>
+      </header>
 
     <main>
       <div class="slideshow" style="text-align: center;"> Images slideshow here </div>
