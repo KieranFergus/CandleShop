@@ -36,6 +36,8 @@
             width: 450px; max-width: 33%; height: 200px;
             border: 1px solid red;
             border-radius: 20px;
+            text-align: center;
+            color: #002400;
         }
 
         main ul li:hover {
@@ -101,6 +103,11 @@
             /* padding: 10px; */
         }
 
+        .image {
+          width: inherit;
+          height: inherit;
+        }
+
 
     </style>
     
@@ -153,7 +160,6 @@
       </header>
 
     <main>
-      <div class="slideshow" style="text-align: center;"> Images slideshow here </div>
       <div style="display: flex; justify-content: center;"> <h1 style=" border-bottom: 3px black solid; width: fit-content;">Products</h1></div>
       <ul id="catalog">
         <li>test</li>
@@ -162,7 +168,7 @@
       <div class="modal" id="modal">
         <div class="modal-inner">
             <div id="product_info">
-                <div id="image">image here</div>
+                <div id="image"></div>
                 <div id="info">
                     <h2>TEST</h2>
                     <p>Description</p>

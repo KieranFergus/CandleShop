@@ -26,12 +26,12 @@ function createCatalog(){
 
     for (i = 0; i < 9; i++) {
         var item = $("<li>").text(catalog[i].name);
-        var item_img = document.createElement("img");
-        item_img.src = catalog[i].image;
-        console.log(item_img.src)
         item.addClass("product")
 
-        item.append(item_img)
+        item.css("background-image", `url('${catalog[i].image}')`);
+        item.css("background-size", "cover");
+        item.css("background-position", "center");
+        // item.append(item_img)
         container.append(item)
     }
 }
@@ -53,8 +53,11 @@ $(document).ready(function(){
         console.log("works")
         $("#modal").addClass("open");
         $(".quantity-input").val(0);
-
+        
         currProduct = catalog.find(product => product.name === $(this).text());
+        $("#product_info #image").css("background-image", `url('${currProduct.image}')`);
+        $("#product_info #image").css("background-size", "cover");
+        $("#product_info #image").css("background-position", "center");
         $(".modal-inner h2").text(currProduct.name);
         $(".modal-inner p").text(currProduct.description)
         
