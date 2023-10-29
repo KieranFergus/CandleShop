@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,12 +6,25 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0" />
     <title>Candle Business</title>
-    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       href="styles.css" />
-    <script src="http://code.jquery.com/jquery-1.4.4.min.js" type="text/javascript"></script>
-    <style>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="styles.css" />
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Poppins&display=swap
+    (https://fonts.googleapis.com/css?family=Poppins&display=swap)">
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"></script>
+
+      <style>
         main {
             background-color: #A9BA9D;
             padding: 0px;
@@ -228,184 +241,192 @@
         }
 
         
-    </style>
-
+    </style> 
   </head>
   <body>
     <header>
+      <div class="menu-icon">
+        <i class="fas fa-bars"></i>
+      </div>
+      <script>
+        $(document).ready(() => {
+          $(".menu-icon").on("click", () => {
+            $(".menu").toggleClass("open");
+            return false;
+          });
+          $("#toggle-button").on("click", () => {
+            $(".menu").toggleClass("open");
+          });
+        });
+      </script>
+      <nav class="menu">
+        <h2>Menu</h2>
+        <ul>
+          <li><a href="catalog.html">Catalog</a></li>
+          <li><a href="makeYourOwn.html">Make Your Own</a></li>
+          <li><a href="aboutUs.html">About Us</a></li>
+          <li><a href="customerReview.html">Customer Review</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="checkout.html">Checkout</a></li>
+          <button id="toggle-button">Close</button>
+        </ul>
+      </nav>
       <a
-        href="homepage.html"
+        href="homepage/midterm/homepage.html"
         id="logo-link">
         <img
-          src="images/logo.png"
+          src="images/TRANSPARENT.png"
           alt="Website Logo"
           id="logo-image" />
       </a>
-      <nav>
-        <ul>
-          <li><a href="#">Catalog</a></li>
-          <li><a href="#">Make Your Own</a></li>
+      <a href="checkout.html" id="cart-link" style="all:unset">
+        <div class="cart-icon">
+          <div class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <span class="cart-count">0</span>
+        </div>
+      </a>
+      <script>
+        var cart = [];
 
-          <li><a href="aboutUs.html">About Us</a></li>
-          <li><a href="#">Customer Review</a></li>
+        //Loading the cart 
+        $(window).on("load", function() {
+            cart = JSON.parse(localStorage.getItem("cart"));
+            
+            $(".cart-count").html(cart.length);
+            
 
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Checkout</a></li>
-        </ul>
-      </nav>
+        })
+      </script>
     </header>
 
     <main>
         <!--background images-->
-      <div class="row">
-        <div class="column" id="left">
-            <button class="MYO" onclick="togglePopup('wax')">Choose Your Waxes!</button>
-
-            <!--wax popup-->
-            <div class="popup" id="wax">
-                <div class="overlay"></div>
-                <div class="content">
-                    <div class="x-out" onclick="togglePopup('wax')">&#x2715;</div>
-                    <h1>Waxes</h1>
-                    <div id="waxList">
-                      <!--<form id="waxData">-->
-                            <input class="waxIngredients" type="checkbox" id="Paraffin" value="paraffin">
-                            <label class="labl" for="Paraffin">Paraffin: $4</label>
-                            <br><br>
-                            <input class="waxIngredients" type="checkbox" id="Soy" value="soy">
-                            <label class="labl" for="Soy">Soy: $4</label>
-                            <br><br>
-                            <input class="waxIngredients" type="checkbox" id="Beeswax" value="beeswax">
-                            <label class="labl" for="Beeswax">Beeswax: $5</label>
-                            <br><br>
-                            <input class="waxIngredients" type="checkbox" id="Coconut" value="coconut">
-                            <label class="labl" for="Coconut">Coconut: $5</label>
-                            <br><br>
-                            <input class="waxIngredients" type="checkbox" id="Bayberry" value="bayberry">
-                            <label class="labl" for="Bayberry">Bayberry: $6</label>
-                            <br><br>
-
-                            <button class="done" id="doneWax" onclick="togglePopup('wax')">Confirm Waxes</button>
-                      <!--</form>--> 
-                        
-                    </div>
-                </div>
-            </div>
-            <br><br>
-            <!--wax popup-->
-        </div>
-
-
-        <div class="column" id="center">
-            <button class="MYO" onclick="togglePopup('oil')">Choose Your Oils!</button>
-
-            <!--oils popup-->
-            <div class="popup" id="oil">
-                <div class="overlay"></div>
-                <div class="content">
-                    <div class="x-out" onclick="togglePopup('oil')">&#x2715;</div>
-                    <h1>Oils</h1>
-                    <div id="oilList">
-                      <!--<form id="oilData">-->
-                            <input class="oilIngredients" type="checkbox"  id="Peppermint" value="peppermint">
-                            <label class="labl" for="Peppermint">Peppermint: $3</label>
-                            <br><br>
-                            <input class="oilIngredients" type="checkbox"  id="Lavender" value="lavender">
-                            <label class="labl" for="Lavender">Lavender: $3</label>
-                            <br><br>
-                            <input class="oilIngredients" type="checkbox" id="Jasmine" value="jasmine">
-                            <label class="labl" for="Jasmine">Jasmine: $3</label>
-                            <br><br>
-                            <input class="oilIngredients" type="checkbox" id="Tea Tree" value="tea tree">
-                            <label class="labl" for="Tea Tree">Tea Tree: $4</label>
-                            <br><br>
-                            <input class="oilIngredients" type="checkbox" id="Lemongrass" value="lemongrass">
-                            <label class="labl" for="Lemongrass">Lemongrass: $4</label>
-                            <br><br>
-
-                            <button  class="done" id="doneOil" onclick="togglePopup('oil')">Confirm Oils</button>
-                      <!--</form>-->  
-                        
-                    </div>
-                </div>
-            </div>
-            <!--oils popup-->
-            <br><br>
-        </div>
-
-
-        <div class="column" id="right">
-            <button class="MYO" onclick="togglePopup('wick')">Choose Your Wick!</button>
-
-            <!--wicks popup-->
-            <div class="popup" id="wick">
-                <div class="overlay"></div>
-                <div class="content">
-                    <div class="x-out" onclick="togglePopup('wick')">&#x2715;</div>
-                    <h1>Wicks</h1>
-                    <div id="wickList">
-                        <!--<form id="wickData">-->
-                            <input class="wickIngredients" type="checkbox" id="Wood" value="wood">
-                            <label class="labl" for="Wood">Wood: $3</label>
-                            <br><br>
-                            <input class="wickIngredients" type="checkbox" id="Hemp" value="hemp">
-                            <label class="labl"for="Hemp">Hemp: $3</label>
-                            <br><br>
-                            <input class="wickIngredients" type="checkbox" id="Cotton" value="cotton">
-                            <label class="labl" for="Cotton">Cotton: $3</label>
-                            <br><br>
-                            <input class="wickIngredients" type="checkbox" id="Zinc Thread" value="zinc thread">
-                            <label class="labl" for="Zinc Thread">Zinc Thread: $4</label>
-                            <br><br>
-                            <input class="wickIngredients" type="checkbox" id="Tin Core" value="tin core">
-                            <label class="labl" for="Tin Core">Tin Core: $4
-                            </label>
-                            <br><br>
-
-                            <button  class="done" id="doneWick" onclick="togglePopup('wick');">Confirm Wicks</button>
-                          <!--</form>-->
-                        
+        <div class="row">
+          <div class="column" id="left">
+              <button class="MYO" onclick="togglePopup('wax')">Choose Your Waxes!</button>
+  
+              <!--wax popup-->
+              <div class="popup" id="wax">
+                  <div class="overlay"></div>
+                  <div class="content">
+                      <div class="x-out" onclick="togglePopup('wax')">&#x2715;</div>
+                      <h1>Waxes</h1>
+                      <div id="waxList">
+                        <!--<form id="waxData">-->
+                              <input class="waxIngredients" type="checkbox" id="Paraffin" value="paraffin">
+                              <label class="labl" for="Paraffin">Paraffin: $4</label>
+                              <br><br>
+                              <input class="waxIngredients" type="checkbox" id="Soy" value="soy">
+                              <label class="labl" for="Soy">Soy: $4</label>
+                              <br><br>
+                              <input class="waxIngredients" type="checkbox" id="Beeswax" value="beeswax">
+                              <label class="labl" for="Beeswax">Beeswax: $5</label>
+                              <br><br>
+                              <input class="waxIngredients" type="checkbox" id="Coconut" value="coconut">
+                              <label class="labl" for="Coconut">Coconut: $5</label>
+                              <br><br>
+                              <input class="waxIngredients" type="checkbox" id="Bayberry" value="bayberry">
+                              <label class="labl" for="Bayberry">Bayberry: $6</label>
+                              <br><br>
+  
+                              <button class="done" id="doneWax" onclick="togglePopup('wax')">Confirm Waxes</button>
+                        <!--</form>--> 
+                          
                       </div>
-                </div>
-            </div>
-            <!--wicks popup-->
-            <br><br>
-        </div>
-        
-      </div>
-      <!--background images-->
-
-
-      <div id="btm">
-        <button id="finalize">Add To Cart</button>
-      </div>
-
-      <script>
-        function togglePopup(x){
-            document.getElementById(x).classList.toggle("active");
-        }
-
-      
-
-        var subAll = document.getElementById('finalize');
-
-        subAll.addEventListener('click', () => {
-          let box2 = document.querySelectorAll('input[type="checkbox"]:checked');
-          if(box2.length == 0){
-            $('#finalize').hide();
-            $('#finalize').fadeIn(500);
-          }
-          for(let i=0; i<box2.length; i++) {
-            console.log(box2[i].value);
-          }
+                  </div>
+              </div>
+              <br><br>
+              <!--wax popup-->
+          </div>
+  
+  
+          <div class="column" id="center">
+              <button class="MYO" onclick="togglePopup('oil')">Choose Your Oils!</button>
+  
+              <!--oils popup-->
+              <div class="popup" id="oil">
+                  <div class="overlay"></div>
+                  <div class="content">
+                      <div class="x-out" onclick="togglePopup('oil')">&#x2715;</div>
+                      <h1>Oils</h1>
+                      <div id="oilList">
+                        <!--<form id="oilData">-->
+                              <input class="oilIngredients" type="checkbox"  id="Peppermint" value="peppermint">
+                              <label class="labl" for="Peppermint">Peppermint: $3</label>
+                              <br><br>
+                              <input class="oilIngredients" type="checkbox"  id="Lavender" value="lavender">
+                              <label class="labl" for="Lavender">Lavender: $3</label>
+                              <br><br>
+                              <input class="oilIngredients" type="checkbox" id="Jasmine" value="jasmine">
+                              <label class="labl" for="Jasmine">Jasmine: $3</label>
+                              <br><br>
+                              <input class="oilIngredients" type="checkbox" id="Tea Tree" value="tea tree">
+                              <label class="labl" for="Tea Tree">Tea Tree: $4</label>
+                              <br><br>
+                              <input class="oilIngredients" type="checkbox" id="Lemongrass" value="lemongrass">
+                              <label class="labl" for="Lemongrass">Lemongrass: $4</label>
+                              <br><br>
+  
+                              <button  class="done" id="doneOil" onclick="togglePopup('oil')">Confirm Oils</button>
+                        <!--</form>-->  
+                          
+                      </div>
+                  </div>
+              </div>
+              <!--oils popup-->
+              <br><br>
+          </div>
+  
+  
+          <div class="column" id="right">
+              <button class="MYO" onclick="togglePopup('wick')">Choose Your Wick!</button>
+  
+              <!--wicks popup-->
+              <div class="popup" id="wick">
+                  <div class="overlay"></div>
+                  <div class="content">
+                      <div class="x-out" onclick="togglePopup('wick')">&#x2715;</div>
+                      <h1>Wicks</h1>
+                      <div id="wickList">
+                          <!--<form id="wickData">-->
+                              <input class="wickIngredients" type="checkbox" id="Wood" value="wood">
+                              <label class="labl" for="Wood">Wood: $3</label>
+                              <br><br>
+                              <input class="wickIngredients" type="checkbox" id="Hemp" value="hemp">
+                              <label class="labl"for="Hemp">Hemp: $3</label>
+                              <br><br>
+                              <input class="wickIngredients" type="checkbox" id="Cotton" value="cotton">
+                              <label class="labl" for="Cotton">Cotton: $3</label>
+                              <br><br>
+                              <input class="wickIngredients" type="checkbox" id="Zinc Thread" value="zinc thread">
+                              <label class="labl" for="Zinc Thread">Zinc Thread: $4</label>
+                              <br><br>
+                              <input class="wickIngredients" type="checkbox" id="Tin Core" value="tin core">
+                              <label class="labl" for="Tin Core">Tin Core: $4
+                              </label>
+                              <br><br>
+  
+                              <button  class="done" id="doneWick" onclick="togglePopup('wick');">Confirm Wicks</button>
+                            <!--</form>-->
+                          
+                        </div>
+                  </div>
+              </div>
+              <!--wicks popup-->
+              <br><br>
+          </div>
           
-        })
-
-
-        
-      </script>
-
-
+        </div>
+        <!--background images-->
+  
+  
+        <div id="btm">
+          <button id="finalize">Add To Cart</button>
+        </div>
+  
+        <script src="makeYourOwn.js"></script>
     </main>
 
     <footer>

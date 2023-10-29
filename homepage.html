@@ -60,12 +60,26 @@
           alt="Website Logo"
           id="logo-image" />
       </a>
-      <div class="cart-icon">
+      <a href="checkout.html" id="cart-link" style="all:unset">
         <div class="cart-icon">
-          <i class="fas fa-shopping-cart"></i>
+          <div class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <span class="cart-count">0</span>
         </div>
-        <span class="cart-count">0</span>
-      </div>
+      </a>
+      <script>
+        var cart = [];
+
+        //Loading the cart 
+        $(window).on("load", function() {
+            cart = JSON.parse(localStorage.getItem("cart"));
+            
+            $(".cart-count").html(cart.length);
+            
+
+        })
+      </script>
     </header>
 
     <main>
