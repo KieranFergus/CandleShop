@@ -16,232 +16,232 @@
     <link
       rel="stylesheet"
       href="styles.css" />
-    <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Poppins&display=swap
-    (https://fonts.googleapis.com/css?family=Poppins&display=swap)">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet" />
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"></script>
 
-      <style>
-        main {
-            background-color: #A9BA9D;
-            padding: 0px;
-        }
-        .column {
-          float: left;
-          width: 33.33%;
-          text-align: center;
-          padding-top: 50vh;
-          padding-bottom: 30vh;
-          border-top: #333, 1px;
-          border-bottom: #333, 1px;
-        }
+    <style>
+      main {
+        background-color: #a9ba9d;
+        padding: 0px;
+      }
+      .column {
+        float: left;
+        width: 33.33%;
+        text-align: center;
+        padding-top: 50vh;
+        padding-bottom: 30vh;
+        border-top: #333, 1px;
+        border-bottom: #333, 1px;
+      }
 
+      #left {
+        background-image: url(images/wax2.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-left: #333, 1px;
+        height: 40vh;
+      }
 
-        #left {
-          background-image: url(images/wax2.jpg);
-          background-repeat: no-repeat;
-          background-size: cover;
-          border-left: #333, 1px;
-          height: 40vh;
-        }
+      #center {
+        background-image: url(images/oils1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 40vh;
+      }
 
-        #center {
-          background-image: url(images/oils1.jpg);
-          background-repeat: no-repeat;
-          background-size: cover;
-          height: 40vh;
-        }
+      #right {
+        background-image: url(images/wicks1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-right: #333, 1px;
+        height: 40vh;
+      }
 
-        #right {
-          background-image: url(images/wicks1.jpg);
-          background-repeat: no-repeat;
-          background-size: cover;
-          border-right: #333, 1px;
-          height: 40vh;
-        }
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
 
+      /*columns (default view)*/
 
-        .row:after {
-          content: "";
-          display: table;
-          clear: both;
-          
-        }
+      /*buttons*/
 
-        /*columns (default view)*/
+      .MYO {
+        padding: 6px;
+        border-radius: 20px;
+        border: #fff solid 1px;
+        font-family: "Poppins" sans-serif;
+        font-weight: 100;
+        outline: none;
+        background-color: rgba(0, 0, 0, 0.4);
+        color: #fff;
+        cursor: pointer;
+        font-size: 30px;
+        display: inline-block;
+        transition: all 0.2s ease 0s;
+        max-width: 30vw;
+      }
 
-        /*buttons*/
+      .MYO:hover {
+        transform: scale(1.05, 1.05);
+        background-color: #a9ba9d;
+      }
 
-        .MYO {
-          padding: 6px;
-          border-radius: 20px;
-          border: #fff solid 1px;
-          font-family: 'Poppins' sans-serif;
-          font-weight: 100;
-          outline: none; 
-          background-color: rgba(0,0,0,0.4); 
-          color: #fff; 
-          cursor: pointer;  
-          font-size: 30px;
-          display: inline-block;
-          transition: all 0.2s ease 0s;
-          max-width: 30vw;
-        }
+      /*buttons*/
 
-        .MYO:hover {
-          transform: scale(1.05,1.05);
-          background-color: #A9BA9D;
-        }
+      /*popups*/
 
-        /*buttons*/
+      .column .popup .overlay {
+        position: fixed;
+        top: 0vh;
+        left: 0vh;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 1;
+        display: none;
+      }
 
-        /*popups*/
+      .column .popup .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transition: all 0.3s ease in;
+        transform: translate(-50%, -50%) scale(0);
+        background-color: #fff;
+        color: #4c4c4c;
+        width: 60vw;
+        min-width: 450px;
+        height: 98vh;
+        z-index: 2;
+        text-align: center;
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius: 5%;
+      }
 
-        .column .popup .overlay {
-          position: fixed;
-          top: 0vh;
-          left: 0vh;
-          width: 100vw;
-          height: 100vh;
-          background:rgba(0,0,0,0.7);
-          z-index:1;
-          display: none;
-        }
+      .column .popup .x-out {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 20px;
+        height: 20px;
+        color: #333;
+        font-size: 20px;
+        font-weight: 400;
+        transition: 0.14s ease;
+      }
 
-        .column .popup .content {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transition:all 0.3s ease in;
-          transform:translate(-50%, -50%) scale(0);
-          background-color: #fff;
-          color:#4c4c4c;
-          width: 60vw;
-          min-width: 450px;
-          height: 98vh;
-          z-index: 2;
-          text-align: center;
-          padding:10px;
-          box-sizing:border-box;
-          border-radius: 5%;
-        }
+      .column .popup .x-out:hover {
+        transform: scale(1.1, 1.1);
+        color: red;
+        cursor: pointer;
+      }
 
-        .column .popup .x-out {
-          position: absolute;
-          top: 20px;
-          right: 20px;
-          width: 20px;
-          height: 20px;
-          color: #333;
-          font-size: 20px;
-          font-weight: 400;
-          transition: 0.14s ease;
-        }
+      .column .popup.active .overlay {
+        display: block;
+      }
 
-        .column .popup .x-out:hover {
-          transform: scale(1.1,1.1);
-          color:red;
-          cursor: pointer;
-        }
+      .column .popup.active .content {
+        transition: all 0.3s ease in;
+        transform: translate(-50%, -50%) scale(1);
+      }
 
-        .column .popup.active .overlay {
-          display: block;
-        }
+      /*popups*/
 
-        .column .popup.active .content {
-          transition:all 0.3s ease in;
-          transform:translate(-50%, -50%) scale(1);
-        }
+      /*popup forms*/
 
-        /*popups*/
+      .waxIngredients,
+      .oilIngredients,
+      .wickIngredients {
+        appearance: none;
+        height: 35px;
+        width: 35px;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.1s ease-in;
+      }
 
-        /*popup forms*/
+      .waxIngredients:hover,
+      .oilIngredients:hover,
+      .wickIngredients:hover {
+        background-color: #a9ba9d;
+        transform: scale(1.05, 1.05);
+      }
 
+      .waxIngredients:checked,
+      .oilIngredients:checked,
+      .wickIngredients:checked {
+        background-color: #01411c;
+      }
 
-        .waxIngredients, .oilIngredients, .wickIngredients {
-          appearance: none;
-          height: 35px;
-          width: 35px;
-          background-color: rgba(0,0,0,0.4);
-          border-radius: 5px;
-          cursor: pointer;
-          transition: 0.1s ease-in;
-        }
+      .labl {
+        color: #4c4c4c;
+        font-size: 25px;
+        font-family: "Poppins" sans-serif;
+        font-weight: 600;
+        cursor: pointer;
+      }
 
-        .waxIngredients:hover, .oilIngredients:hover, .wickIngredients:hover {
-          background-color: #A9BA9D;
-          transform: scale(1.05,1.05);
-        }
+      .done {
+        padding: 6px;
+        border-radius: 20px;
+        border: #a9ba9d solid 1px;
+        font-family: "Poppins" sans-serif;
+        outline: none;
+        background-color: rgba(0, 0, 0, 0.4);
+        color: #fff;
+        cursor: pointer;
+        font-size: 25px;
+        font-weight: 300;
+        font-family: "Poppins" sans-serif;
+        display: inline-block;
+        transition: all 0.2s ease 0s;
+      }
 
-        .waxIngredients:checked, .oilIngredients:checked, .wickIngredients:checked {
-          background-color: #01411C;
-        }
+      .done:hover {
+        transform: scale(1.1, 1.1);
+        background-color: #a9ba9d;
+      }
 
-        .labl {
-          color: #4c4c4c;
-          font-size: 25px;
-          font-family: 'Poppins' sans-serif;
-          font-weight: 600;
-          cursor: pointer;
-        }
+      #btm {
+        position: relative;
+        width: 100vw;
+      }
 
-        .done {
-          padding: 6px;
-          border-radius: 20px;
-          border: #A9BA9D solid 1px;
-          font-family: 'Poppins' sans-serif;
-          outline: none; 
-          background-color: rgba(0,0,0,0.4); 
-          color: #fff; 
-          cursor: pointer;  
-          font-size: 25px;
-          font-weight: 300;
-          font-family: 'Poppins' sans-serif;
-          display: inline-block;
-          transition: all 0.2s ease 0s;
-        }
-
-        .done:hover {
-          transform: scale(1.1,1.1);
-          background-color: #A9BA9D;
-        }
-
-        #btm {
-          position: relative;
-          width: 100vw;
-        }
-
-        #finalize {
-          padding: 6px;
-          border-radius: 20px;
-          border: #fff solid 1px;
-          font-family: 'Poppins' sans-serif;
-          outline: none; 
-          background-color: rgba(0,0,0,0.4); 
-          color: #fff; 
-          cursor: pointer;  
-          font-size: 30px;
-          font-weight: 300;
-          font-family: 'Poppins' sans-serif;
-          display: inline-block;
-          transition: all 0.2s ease 0s;
-          right: 44vw;
-          bottom: 20px;
-          position: absolute;
-          /* left: 50%;
+      #finalize {
+        padding: 6px;
+        border-radius: 20px;
+        border: #fff solid 1px;
+        font-family: "Poppins" sans-serif;
+        outline: none;
+        background-color: rgba(0, 0, 0, 0.4);
+        color: #fff;
+        cursor: pointer;
+        font-size: 30px;
+        font-weight: 300;
+        font-family: "Poppins" sans-serif;
+        display: inline-block;
+        transition: all 0.2s ease 0s;
+        right: 44vw;
+        bottom: 20px;
+        position: absolute;
+        /* left: 50%;
           width: fit-content; */
-        }
+      }
 
-        #finalize:hover {
-          transform: scale(1.1,1.1);
-          background-color: #A9BA9D;
-        }
-
-        
-    </style> 
+      #finalize:hover {
+        transform: scale(1.1, 1.1);
+        background-color: #a9ba9d;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -272,161 +272,310 @@
         </ul>
       </nav>
       <a
-        href="homepage/midterm/homepage.html"
+        href="#"
         id="logo-link">
         <img
-          src="images/TRANSPARENT.png"
+          src="../../images/TRANSPARENT.png"
           alt="Website Logo"
           id="logo-image" />
       </a>
-      <a href="checkout.html" id="cart-link" style="all:unset">
+      <div class="cart-icon">
         <div class="cart-icon">
-          <div class="cart-icon">
-            <i class="fas fa-shopping-cart"></i>
-          </div>
-          <span class="cart-count">0</span>
+          <i class="fas fa-shopping-cart"></i>
         </div>
-      </a>
-      <script>
-        var cart = [];
-
-        //Loading the cart 
-        $(window).on("load", function() {
-            cart = JSON.parse(localStorage.getItem("cart"));
-            
-            $(".cart-count").html(cart.length);
-            
-
-        })
-      </script>
+        <span class="cart-count">0</span>
+      </div>
     </header>
 
     <main>
-        <!--background images-->
-        <div class="row">
-          <div class="column" id="left">
-              <button class="MYO" onclick="togglePopup('wax')">Choose Your Waxes!</button>
-  
-              <!--wax popup-->
-              <div class="popup" id="wax">
-                  <div class="overlay"></div>
-                  <div class="content">
-                      <div class="x-out" onclick="togglePopup('wax')">&#x2715;</div>
-                      <h1>Waxes</h1>
-                      <div id="waxList">
-                        <!--<form id="waxData">-->
-                              <input class="waxIngredients" type="checkbox" id="Paraffin" value="paraffin">
-                              <label class="labl" for="Paraffin">Paraffin: $4</label>
-                              <br><br>
-                              <input class="waxIngredients" type="checkbox" id="Soy" value="soy">
-                              <label class="labl" for="Soy">Soy: $4</label>
-                              <br><br>
-                              <input class="waxIngredients" type="checkbox" id="Beeswax" value="beeswax">
-                              <label class="labl" for="Beeswax">Beeswax: $5</label>
-                              <br><br>
-                              <input class="waxIngredients" type="checkbox" id="Coconut" value="coconut">
-                              <label class="labl" for="Coconut">Coconut: $5</label>
-                              <br><br>
-                              <input class="waxIngredients" type="checkbox" id="Bayberry" value="bayberry">
-                              <label class="labl" for="Bayberry">Bayberry: $6</label>
-                              <br><br>
-  
-                              <button class="done" id="doneWax" onclick="togglePopup('wax')">Confirm Waxes</button>
-                        <!--</form>--> 
-                          
-                      </div>
-                  </div>
+      <!--background images-->
+      <div class="row">
+        <div
+          class="column"
+          id="left">
+          <button
+            class="MYO"
+            onclick="togglePopup('wax')">
+            Choose Your Waxes!
+          </button>
+
+          <!--wax popup-->
+          <div
+            class="popup"
+            id="wax">
+            <div class="overlay"></div>
+            <div class="content">
+              <div
+                class="x-out"
+                onclick="togglePopup('wax')">
+                &#x2715;
               </div>
-              <br><br>
-              <!--wax popup-->
-          </div>
-  
-  
-          <div class="column" id="center">
-              <button class="MYO" onclick="togglePopup('oil')">Choose Your Oils!</button>
-  
-              <!--oils popup-->
-              <div class="popup" id="oil">
-                  <div class="overlay"></div>
-                  <div class="content">
-                      <div class="x-out" onclick="togglePopup('oil')">&#x2715;</div>
-                      <h1>Oils</h1>
-                      <div id="oilList">
-                        <!--<form id="oilData">-->
-                              <input class="oilIngredients" type="checkbox"  id="Peppermint" value="peppermint">
-                              <label class="labl" for="Peppermint">Peppermint: $3</label>
-                              <br><br>
-                              <input class="oilIngredients" type="checkbox"  id="Lavender" value="lavender">
-                              <label class="labl" for="Lavender">Lavender: $3</label>
-                              <br><br>
-                              <input class="oilIngredients" type="checkbox" id="Jasmine" value="jasmine">
-                              <label class="labl" for="Jasmine">Jasmine: $3</label>
-                              <br><br>
-                              <input class="oilIngredients" type="checkbox" id="Tea Tree" value="tea tree">
-                              <label class="labl" for="Tea Tree">Tea Tree: $4</label>
-                              <br><br>
-                              <input class="oilIngredients" type="checkbox" id="Lemongrass" value="lemongrass">
-                              <label class="labl" for="Lemongrass">Lemongrass: $4</label>
-                              <br><br>
-  
-                              <button  class="done" id="doneOil" onclick="togglePopup('oil')">Confirm Oils</button>
-                        <!--</form>-->  
-                          
-                      </div>
-                  </div>
+              <h1>Waxes</h1>
+              <div id="waxList">
+                <!--<form id="waxData">-->
+                <input
+                  class="waxIngredients"
+                  type="checkbox"
+                  id="Paraffin"
+                  value="paraffin" />
+                <label
+                  class="labl"
+                  for="Paraffin"
+                  >Paraffin: $4</label
+                >
+                <br /><br />
+                <input
+                  class="waxIngredients"
+                  type="checkbox"
+                  id="Soy"
+                  value="soy" />
+                <label
+                  class="labl"
+                  for="Soy"
+                  >Soy: $4</label
+                >
+                <br /><br />
+                <input
+                  class="waxIngredients"
+                  type="checkbox"
+                  id="Beeswax"
+                  value="beeswax" />
+                <label
+                  class="labl"
+                  for="Beeswax"
+                  >Beeswax: $5</label
+                >
+                <br /><br />
+                <input
+                  class="waxIngredients"
+                  type="checkbox"
+                  id="Coconut"
+                  value="coconut" />
+                <label
+                  class="labl"
+                  for="Coconut"
+                  >Coconut: $5</label
+                >
+                <br /><br />
+                <input
+                  class="waxIngredients"
+                  type="checkbox"
+                  id="Bayberry"
+                  value="bayberry" />
+                <label
+                  class="labl"
+                  for="Bayberry"
+                  >Bayberry: $6</label
+                >
+                <br /><br />
+
+                <button
+                  class="done"
+                  id="doneWax"
+                  onclick="togglePopup('wax')">
+                  Confirm Waxes
+                </button>
+                <!--</form>-->
               </div>
-              <!--oils popup-->
-              <br><br>
+            </div>
           </div>
-  
-  
-          <div class="column" id="right">
-              <button class="MYO" onclick="togglePopup('wick')">Choose Your Wick!</button>
-  
-              <!--wicks popup-->
-              <div class="popup" id="wick">
-                  <div class="overlay"></div>
-                  <div class="content">
-                      <div class="x-out" onclick="togglePopup('wick')">&#x2715;</div>
-                      <h1>Wicks</h1>
-                      <div id="wickList">
-                          <!--<form id="wickData">-->
-                              <input class="wickIngredients" type="checkbox" id="Wood" value="wood">
-                              <label class="labl" for="Wood">Wood: $3</label>
-                              <br><br>
-                              <input class="wickIngredients" type="checkbox" id="Hemp" value="hemp">
-                              <label class="labl"for="Hemp">Hemp: $3</label>
-                              <br><br>
-                              <input class="wickIngredients" type="checkbox" id="Cotton" value="cotton">
-                              <label class="labl" for="Cotton">Cotton: $3</label>
-                              <br><br>
-                              <input class="wickIngredients" type="checkbox" id="Zinc Thread" value="zinc thread">
-                              <label class="labl" for="Zinc Thread">Zinc Thread: $4</label>
-                              <br><br>
-                              <input class="wickIngredients" type="checkbox" id="Tin Core" value="tin core">
-                              <label class="labl" for="Tin Core">Tin Core: $4
-                              </label>
-                              <br><br>
-  
-                              <button  class="done" id="doneWick" onclick="togglePopup('wick');">Confirm Wicks</button>
-                            <!--</form>-->
-                          
-                        </div>
-                  </div>
-              </div>
-              <!--wicks popup-->
-              <br><br>
-          </div>
-          
+          <br /><br />
+          <!--wax popup-->
         </div>
-        <!--background images-->
-  
-  
-        <div id="btm">
-          <button id="finalize">Add To Cart</button>
+
+        <div
+          class="column"
+          id="center">
+          <button
+            class="MYO"
+            onclick="togglePopup('oil')">
+            Choose Your Oils!
+          </button>
+
+          <!--oils popup-->
+          <div
+            class="popup"
+            id="oil">
+            <div class="overlay"></div>
+            <div class="content">
+              <div
+                class="x-out"
+                onclick="togglePopup('oil')">
+                &#x2715;
+              </div>
+              <h1>Oils</h1>
+              <div id="oilList">
+                <!--<form id="oilData">-->
+                <input
+                  class="oilIngredients"
+                  type="checkbox"
+                  id="Peppermint"
+                  value="peppermint" />
+                <label
+                  class="labl"
+                  for="Peppermint"
+                  >Peppermint: $3</label
+                >
+                <br /><br />
+                <input
+                  class="oilIngredients"
+                  type="checkbox"
+                  id="Lavender"
+                  value="lavender" />
+                <label
+                  class="labl"
+                  for="Lavender"
+                  >Lavender: $3</label
+                >
+                <br /><br />
+                <input
+                  class="oilIngredients"
+                  type="checkbox"
+                  id="Jasmine"
+                  value="jasmine" />
+                <label
+                  class="labl"
+                  for="Jasmine"
+                  >Jasmine: $3</label
+                >
+                <br /><br />
+                <input
+                  class="oilIngredients"
+                  type="checkbox"
+                  id="Tea Tree"
+                  value="tea tree" />
+                <label
+                  class="labl"
+                  for="Tea Tree"
+                  >Tea Tree: $4</label
+                >
+                <br /><br />
+                <input
+                  class="oilIngredients"
+                  type="checkbox"
+                  id="Lemongrass"
+                  value="lemongrass" />
+                <label
+                  class="labl"
+                  for="Lemongrass"
+                  >Lemongrass: $4</label
+                >
+                <br /><br />
+
+                <button
+                  class="done"
+                  id="doneOil"
+                  onclick="togglePopup('oil')">
+                  Confirm Oils
+                </button>
+                <!--</form>-->
+              </div>
+            </div>
+          </div>
+          <!--oils popup-->
+          <br /><br />
         </div>
-  
-        <script src="makeYourOwn.js"></script>
+
+        <div
+          class="column"
+          id="right">
+          <button
+            class="MYO"
+            onclick="togglePopup('wick')">
+            Choose Your Wick!
+          </button>
+
+          <!--wicks popup-->
+          <div
+            class="popup"
+            id="wick">
+            <div class="overlay"></div>
+            <div class="content">
+              <div
+                class="x-out"
+                onclick="togglePopup('wick')">
+                &#x2715;
+              </div>
+              <h1>Wicks</h1>
+              <div id="wickList">
+                <!--<form id="wickData">-->
+                <input
+                  class="wickIngredients"
+                  type="checkbox"
+                  id="Wood"
+                  value="wood" />
+                <label
+                  class="labl"
+                  for="Wood"
+                  >Wood: $3</label
+                >
+                <br /><br />
+                <input
+                  class="wickIngredients"
+                  type="checkbox"
+                  id="Hemp"
+                  value="hemp" />
+                <label
+                  class="labl"
+                  for="Hemp"
+                  >Hemp: $3</label
+                >
+                <br /><br />
+                <input
+                  class="wickIngredients"
+                  type="checkbox"
+                  id="Cotton"
+                  value="cotton" />
+                <label
+                  class="labl"
+                  for="Cotton"
+                  >Cotton: $3</label
+                >
+                <br /><br />
+                <input
+                  class="wickIngredients"
+                  type="checkbox"
+                  id="Zinc Thread"
+                  value="zinc thread" />
+                <label
+                  class="labl"
+                  for="Zinc Thread"
+                  >Zinc Thread: $4</label
+                >
+                <br /><br />
+                <input
+                  class="wickIngredients"
+                  type="checkbox"
+                  id="Tin Core"
+                  value="tin core" />
+                <label
+                  class="labl"
+                  for="Tin Core"
+                  >Tin Core: $4
+                </label>
+                <br /><br />
+
+                <button
+                  class="done"
+                  id="doneWick"
+                  onclick="togglePopup('wick');">
+                  Confirm Wicks
+                </button>
+                <!--</form>-->
+              </div>
+            </div>
+          </div>
+          <!--wicks popup-->
+          <br /><br />
+        </div>
+      </div>
+      <!--background images-->
+
+      <div id="btm">
+        <button id="finalize">Add To Cart</button>
+      </div>
+
+      <script src="makeYourOwn.js"></script>
     </main>
 
     <footer>

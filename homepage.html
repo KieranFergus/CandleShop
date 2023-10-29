@@ -57,7 +57,10 @@
           alt="Website Logo"
           id="logo-image" />
       </a>
-      <a href="checkout.html" id="cart-link" style="all:unset">
+      <a
+        href="checkout.html"
+        id="cart-link"
+        style="all: unset">
         <div class="cart-icon">
           <div class="cart-icon">
             <i class="fas fa-shopping-cart"></i>
@@ -68,14 +71,12 @@
       <script>
         var cart = [];
 
-        //Loading the cart 
-        $(window).on("load", function() {
-            cart = JSON.parse(localStorage.getItem("cart"));
-            
-            $(".cart-count").html(cart.length);
-            
+        //Loading the cart
+        $(window).on("load", function () {
+          cart = JSON.parse(localStorage.getItem("cart"));
 
-        })
+          $(".cart-count").html(cart.length);
+        });
       </script>
     </header>
 
