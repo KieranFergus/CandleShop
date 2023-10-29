@@ -35,10 +35,12 @@ header {
   width: 250px;
   max-width: 50%;
   height: 100%;
-  background-color: rgba(118, 118, 118, 0.906);
+  background-color: #333;
   color: #fff;
   transition: left 0.3s;
   overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-right: 1px solid #555;
 }
 .menu.open {
   left: 0;
