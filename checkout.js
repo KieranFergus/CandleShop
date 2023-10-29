@@ -21,7 +21,16 @@ $(window).on("load", function() {
 })
 
 $(document).ready(function() {
-    
+    $("#clearCart").on("click", () =>{
+        console.log("works")
+        for (i = 0; i < cart.length; i++){
+            cart.pop();
+            $(cart).empty()
+        }
+
+        console.log(cart);
+        // localStorage.clear();
+    })
 })
 
 function createCheckout(){
@@ -49,7 +58,7 @@ function createCheckout(){
         quantity.addClass(".pricing li");
         pricing.append(quantity);
 
-        let total = $("<li>").html("Total: <br>$" + parseInt(item.cost * item.quantity));
+        let total = $("<li>").html("Subtotal: <br>$" + parseInt(item.cost * item.quantity));
         cost.addClass(".pricing li");
         pricing.append(total);
         

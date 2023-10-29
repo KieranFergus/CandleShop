@@ -75,9 +75,25 @@
           border: 1px solid black;
           border-radius: 30px;
           width: 100%; max-width: 300px;
-          height: 100px;
-          float: right;
+          height: 50px;
+          padding: 10px;
+          margin: 0;;
+          box-sizing: border-box;
+          right: 0;
         }
+
+        #buy {
+          border: 1px solid black;
+          border-radius: 30px;
+          width: 100%; max-width: 300px;
+          height: 50px;
+          padding: 10px;
+          box-sizing: border-box;
+          right: 0;
+          top: 50px;
+        }
+
+
 
     </style>
 
@@ -134,13 +150,11 @@
       <div style="display: flex; justify-content: center;"> <h1 style=" border-bottom: 3px black solid; width: fit-content;">Checkout</h1></div>
       <div id="message">Your Cart Is Empty</div>
       <ul id="checkout" style="padding: 0;"></ul>
+      <button id="clearCart">clear cart</button>
       
-      <div>
-        <div id="total">total</div>
-        <div id="buy">buy</div>
-        <div id="clearCart">clear cart</div>
-
-
+      <div style="width: 100%; height: fit-content; display: flex; align-items: flex-end; flex-direction: column;">
+        <h2 id="total">Total</h2>
+        <button id="buy">Buy</button>
       </div>
 
     </main>
