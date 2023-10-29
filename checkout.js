@@ -1,5 +1,5 @@
 /* Candle Class */
-function product(name, cost, qty, description){
+function Product(name, cost, qty, description){
     this.name = name;
     this.cost = cost;
     this.quantity = qty;
@@ -11,11 +11,13 @@ var cart = [];
 
 //Loading the cart from catalog
 $(window).on("load", function() {
-    console.log("load works")
     cart = JSON.parse(localStorage.getItem("cart"));
     
     $(".cart-count").html(cart.length);
-    createCheckout();
+    
+    if (cart.length != 0) {
+        createCheckout();
+    }
 })
 
 $(document).ready(function() {

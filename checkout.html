@@ -60,12 +60,25 @@
           position: absolute;
           top: 30px; right: 0;
         }
-
       
         .pricing li {
             margin-right: 40px; 
             text-align: center;
         }
+
+        #message {
+          position: absolute;
+
+        }
+
+        #total {
+          border: 1px solid black;
+          border-radius: 30px;
+          width: 100%; max-width: 300px;
+          height: 100px;
+          float: right;
+        }
+
     </style>
 
   </head>
@@ -87,49 +100,49 @@
       </script>
       <nav class="menu">
         <ul>
-          <li><a href="#">Catalog</a></li>
+          <li><a href="catalog.html">Catalog</a></li>
           <li><a href="makeYourOwn.html">Make Your Own</a></li>
 
           <li><a href="aboutUs.html">About Us</a></li>
           <li><a href="#">Customer Review</a></li>
 
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Checkout</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="checkout.html">Checkout</a></li>
           <button id="toggle-button">Close</button>
         </ul>
       </nav>
       <a
-        href="#"
+        href="homepage/midterm/homepage.html"
         id="logo-link">
         <img
           src="images/TRANSPARENT.png"
           alt="Website Logo"
           id="logo-image" />
       </a>
-      <div class="cart-icon">
+      <a href="checkout.html" id="cart-link" style="all:unset">
         <div class="cart-icon">
-          <i class="fas fa-shopping-cart"></i>
+          <div class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <span class="cart-count">0</span>
         </div>
-        <span class="cart-count">0</span>
-      </div>
+      </a>
     </header>
 
     <main>
+      
       <div style="display: flex; justify-content: center;"> <h1 style=" border-bottom: 3px black solid; width: fit-content;">Checkout</h1></div>
-      <ul id="checkout" style="padding: 0;">
-        <li class="product">
-          <div class="image"></div>
-          <div class="info">
-            <h2 class="title">Item</h2>
-            <ul class="pricing">
-              <li>Cost<br>$50</li>
-              <li>Quantity<br>3</li>
-              <li>Total<br>$150</li>
-          </ul>
+      <div id="message">Your Cart Is Empty</div>
+      <ul id="checkout" style="padding: 0;"></ul>
+      
+      <div>
+        <div id="total">total</div>
+        <div id="buy">buy</div>
+        <div id="clearCart">clear cart</div>
 
-          </div>
-        </li>
-      </ul>
+
+      </div>
+
     </main>
 
     <footer>
