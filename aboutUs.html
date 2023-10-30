@@ -104,7 +104,7 @@
     </style>
   </head>
   <body>
-    <header>
+   <header>
       <div class="menu-icon">
         <i class="fas fa-bars"></i>
       </div>
@@ -120,26 +120,30 @@
         });
       </script>
       <nav class="menu">
-        <h2>Menu</h2>
         <ul>
           <li><a href="catalog.html">Catalog</a></li>
           <li><a href="makeYourOwn.html">Make Your Own</a></li>
+
           <li><a href="aboutUs.html">About Us</a></li>
           <li><a href="customerReview.html">Customer Review</a></li>
+
           <li><a href="contact.html">Contact</a></li>
           <li><a href="checkout.html">Checkout</a></li>
           <button id="toggle-button">Close</button>
         </ul>
       </nav>
       <a
-        href="homepage/midterm/homepage.html"
+        href="homepage.html"
         id="logo-link">
         <img
           src="images/TRANSPARENT.png"
           alt="Website Logo"
           id="logo-image" />
       </a>
-      <a href="checkout.html" id="cart-link" style="all:unset">
+      <a
+        href="checkout.html"
+        id="cart-link"
+        style="all: unset">
         <div class="cart-icon">
           <div class="cart-icon">
             <i class="fas fa-shopping-cart"></i>
@@ -147,19 +151,6 @@
           <span class="cart-count">0</span>
         </div>
       </a>
-      <script>
-        var cart = [];
-
-        //Loading the cart 
-        $(window).on("load", function() {
-            cart = JSON.parse(localStorage.getItem("cart"));
-            
-            $(".cart-count").html(cart.length);
-            
-
-        })
-      </script>
-      </div>
     </header>
 
     <main>
@@ -173,7 +164,7 @@
         Thank you for being a part of the Whispering Wax family!
 
 
-        <br><br><br>
+      <br><br><br>
         <hr>
         <br>
       </p>
