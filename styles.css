@@ -1,4 +1,4 @@
-@import(https://fonts.googleapis.com/css2?family=Poppins&display=swap);
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 * {
   font-family: "Poppins" sans-serif;
@@ -47,6 +47,7 @@ header {
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   border-right: 1px solid #555;
+  z-index: 999;
 }
 .menu.open {
   left: 0;
