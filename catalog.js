@@ -1,9 +1,10 @@
 /* Candle Class */
-function Product(name, cost, qty, description) {
+function Product(name, cost, qty, description, image) {
   this.name = name;
   this.cost = cost;
   this.quantity = qty;
   this.description = description;
+  this.image = image;
 }
 
 catalog = new Array(
@@ -11,55 +12,64 @@ catalog = new Array(
     "Tranquil Twilight",
     12,
     0,
-    "This candle offers a soothing blend of lavender and chamomile scents, perfect for winding down after a long day. Let its gentle fragrance envelop you in tranquility."
+    "This candle offers a soothing blend of lavender and chamomile scents, perfect for winding down after a long day. Let its gentle fragrance envelop you in tranquility.",
+    "images/cat1.jpg"
   ),
   new Product(
     "Citrus Serenity",
     15,
     0,
-    "Enjoy the refreshing and invigorating aroma of zesty citrus fruits. This candle brings a burst of energy to any room, creating a sense of serenity and awakening your senses."
-  ),
+    "Enjoy the refreshing and invigorating aroma of zesty citrus fruits. This candle brings a burst of energy to any room, creating a sense of serenity and awakening your senses.",
+    "images/cat2.jpg"
+    ),
   new Product(
     "Enchanted Embers",
     10,
     0,
-    "Enchanted Embers evokes the cozy ambiance of a crackling fireplace. Its warm and woody notes create a magical atmosphere, perfect for a relaxing evening."
+    "Enchanted Embers evokes the cozy ambiance of a crackling fireplace. Its warm and woody notes create a magical atmosphere, perfect for a relaxing evening.",
+    "images/cat3.jpg"
   ),
   new Product(
     "Midnight Jasmine",
     14,
     0,
-    "The fragrance of midnight jasmine fills the air with floral elegance and a touch of mystery. Light this candle to set a romantic and enchanting mood."
+    "The fragrance of midnight jasmine fills the air with floral elegance and a touch of mystery. Light this candle to set a romantic and enchanting mood.",
+    "images/cat4.jpg"
   ),
   new Product(
     "Cozy Cabin Glow",
     12,
     0,
-    "Imagine the warmth of a cozy cabin in the woods. This candle combines rustic woodsy scents with a hint of spiced vanilla, providing a comforting and inviting atmosphere."
+    "Imagine the warmth of a cozy cabin in the woods. This candle combines rustic woodsy scents with a hint of spiced vanilla, providing a comforting and inviting atmosphere.",
+    "images/cat5.jpg"
   ),
   new Product(
     "Ocean Breeze Bliss",
     15,
     0,
-    "Bring the soothing scent of the ocean into your home. Ocean Breeze Bliss offers a fresh and revitalizing fragrance, reminiscent of a day at the beach."
+    "Bring the soothing scent of the ocean into your home. Ocean Breeze Bliss offers a fresh and revitalizing fragrance, reminiscent of a day at the beach.",
+    "images/cat6.jpg"
   ),
   new Product(
     "Vanilla Velvet Dream",
     14,
     0,
-    "Dive into a dreamy world of creamy vanilla. This candle envelops you in a warm and comforting embrace, like a velvety dessert for the senses."
+    "Dive into a dreamy world of creamy vanilla. This candle envelops you in a warm and comforting embrace, like a velvety dessert for the senses.",
+    "images/cat7.jpg"
   ),
   new Product(
     "Fireside Harmony",
     10,
     0,
-    "Fireside Harmony captures the essence of a crackling campfire. Its smoky and earthy scents create a harmonious ambiance that brings people together."
+    "Fireside Harmony captures the essence of a crackling campfire. Its smoky and earthy scents create a harmonious ambiance that brings people together.",
+    "images/cat8.jpg"
   ),
   new Product(
     "Lavender Lullaby",
     12,
     0,
-    "Lavender Lullaby is the perfect candle to help you relax and unwind. With its calming lavender scent, it lulls you into a peaceful and restful sleep."
+    "Lavender Lullaby is the perfect candle to help you relax and unwind. With its calming lavender scent, it lulls you into a peaceful and restful sleep.",
+    "images/cat8.jpg"
   )
 );
 
