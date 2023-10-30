@@ -154,7 +154,7 @@ function storeCart() {
 function findProductIndexByName(name) {
   for (let i = 0; i < catalog.length; i++) {
     if (catalog[i].name === name) {
-      return i; // Return the index when the name matches
+      return i;
     }
   }
   return -1; // Return -1 if the name is not found in the catalog
