@@ -20,6 +20,116 @@
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"></script>
+
+
+    <style>
+      * {
+      box-sizing: border-box;
+      }
+
+      body {
+      font-family: 'Poppins', Verdana, sans-serif;
+      margin: 0;
+      }
+
+      .flex-container-1 {
+      display: flex;
+      margin-top: 20px;
+      }
+
+      .flex-container-1 div, .flex-container-2 div {
+      flex: 1;
+      }
+
+      .flex-container-1 img, .flex-container-2 img {
+      width: 100%;
+      }
+
+      .flex-container-1 div:nth-child(2) {
+      padding: 0 20px;
+      }
+
+      .flex-container-1 h2, 
+      .flex-container-1 h3,
+      .flex-container-2 h2,
+      .flex-container-2 h3 {
+      text-align: center;
+      }
+
+      .prev {
+      position: absolute;
+      top: 80%;
+      left: 0;
+      transform: translateY(-50%);
+      font-size: 50px; /* Adjust the font size as needed */
+      padding: 10px 20px;
+      }
+
+      .next {
+      position: absolute;
+      top: 80%;
+      right: 0;
+      transform: translateY(-50%);
+      font-size: 50px; /* Adjust the font size as needed */
+      padding: 10px 20px; /* Adjust the padding as needed */
+      }
+
+      .prev, .next {
+          cursor: default !important;
+      }
+
+      .overlay-button {
+        position: absolute;
+        bottom: -280px; /* Adjusted value to move it up */
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 8px;
+        height: 50px; /* Adjusted height */
+        width: 150px; /* Adjusted width */
+        font-family: 'Poppins', Arial, Helvetica, sans-serif;
+        font-size: 18px;
+        background-color: #A9BA9D; /* Adding a background color */
+        color: white; /* Changing the text color */
+        border: 2px solid #A9BA9D; /* Adding a border */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding a box shadow */
+        text-align: center; /* Centering the text */
+        line-height: 50px; /* Centering the text vertically */
+        cursor: pointer; /* Changing the cursor on hover */
+        transition: all 0.3s ease; /* Adding a smooth transition */
+    }
+
+    .overlay-button:hover {
+        background-color: #002400; /* Darker background color on hover */
+        border: 2px solid #002400; /* Darker border on hover */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enlarging box shadow on hover */
+        font-size: 20px;
+    }
+
+      .flex-container-2 {
+      display: flex;
+      margin-top: 20px;
+      justify-content: space-between;
+      align-items: flex-start;
+      }
+
+      .flex-container-2 div:nth-child(2) {
+      padding: 0 20px;
+      display: flex;
+      }
+      h2 {
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: -10px;
+      }
+      h3 {
+      font-size: 30px;
+      }
+      p {
+      font-size: 20px;
+      padding-left: 20px;
+
+      }
+  </style>
   </head>
   <body>
     <header>
@@ -81,7 +191,110 @@
     </header>
 
     <main>
-      <!-- content -->
+      <div class="slideshow-container">
+
+        <div class="mySlides fade">
+        <img src="images/candle4.jpg" style="width:100%">
+        <button class="overlay-button" onclick="handleButtonClick()">SHOP NOW</button>
+        <!-- <div class="text">Caption Three</div> -->
+    </div> 
+
+    <div class="mySlides fade">
+    <img src="images/candle2.jpg" style="width:100%">
+    <button class="overlay-button" onclick="handleButtonClick()">SHOP NOW</button>
+    <!-- <div class="text">Caption Three</div> -->
+    </div>
+
+    <div class="mySlides fade">
+    <img src="images/candle1.jpg" style="width:100%">
+    <button class="overlay-button" onclick="handleButtonClick()">SHOP NOW</button>
+    <!-- <div class="text">Caption Three</div> -->
+    </div>
+
+    <div class="mySlides fade">
+    <img src="images/candle3.jpg" style="width:100%">
+    <button class="overlay-button" onclick="handleButtonClick()">SHOP NOW</button>
+    <!-- <div class="text">Caption Three</div> -->
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)" style="cursor: default;">&lt;</a>
+    <a class="next" onclick="plusSlides(1)" style="cursor: default;">&gt;</a>
+
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+        <span class="dot" onclick="currentSlide(4)"></span> 
+    </div>
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+    showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+    showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+    }
+</script>
+  <!-- Flex Container 1 -->
+    <div class="flex-container-1">
+        <div style="flex: 1;">
+            <img src="images/making.jpg">
+        </div>
+        <div style="flex: 1;">
+            <h2>Don't Like What We Have?</h2>
+            <h3>~ Create your own candle ~</h3>
+            <p>Embrace your creativity and design your very own scented candle. 
+            Explore a variety of fragrances and colors, and craft a personalized
+            candle that reflects your unique style and preference. With our 
+            custom candle-making experience, you're in control of the scent, 
+            the design, and the ambiance. Discover the joy of creating a candle 
+            that embodies your individuality. Unleash your imagination and 
+            embark on a sensory journey with our guided candle-making process.</p>
+        </div>
+    </div>
+
+  <!-- Flex Container 2 -->
+    <div class="flex-container-2">
+        <div style="flex: 1;">
+            <h2>Looking for some fun?</h2>
+            <h3>Come to a candlemaking workshop!</h3>
+            <p>Experience the age-old art of candlemaking like never before! Join us 
+            for an immersive workshop that invites you to delve into the world 
+            of scents and colors. Our candlemaking workshop promises an 
+            unforgettable journey of creativity and self-expression. Discover 
+            the joy of crafting your very own personalized candles, tailored to 
+            your unique tastes and preferences. Unleash your imagination, ignite
+            your senses, and create stunning candles that radiate warmth and 
+            ambiance. Be a part of our candlemaking community and embark on an 
+            unforgettable hands-on experience.</p>
+        </div>
+        <div style="flex: 1;">
+        <img class="workshop-img" src="images/workshop.jpg">
+    </div>
     </main>
 
     <footer>
