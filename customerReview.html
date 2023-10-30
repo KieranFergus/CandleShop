@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="styles.css" />
+    <title>Customer Reviews</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f2f2f2;
+      }
+
+      .review-container {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .review {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .review p {
+        text-align: left;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+      .review-wrapper {
+        display: flex;
+      }
+      @media (max-width: 700px) {
+        .review-wrapper {
+          flex-direction: column;
+        }
+      }
+      .review-text {
+        border-left: 3px solid #a9ba9d;
+        padding-left: 4px;
+      }
+
+      .author-text {
+        text-align: right !important;
+        font-weight: bold;
+      }
+      .author-text::before {
+        content: " - ";
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="menu-icon">
+        <i class="fas fa-bars"></i>
+      </div>
+      <script>
+        $(document).ready(() => {
+          $(".menu-icon").on("click", () => {
+            $(".menu").toggleClass("open");
+            return false;
+          });
+          $("#toggle-button").on("click", () => {
+            $(".menu").toggleClass("open");
+          });
+        });
+      </script>
+      <nav class="menu">
+        <h2>Menu</h2>
+        <ul>
+          <li><a href="catalog.html">Catalog</a></li>
+          <li><a href="makeYourOwn.html">Make Your Own</a></li>
+          <li><a href="aboutUs.html">About Us</a></li>
+          <li><a href="customerReview.html">Customer Review</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="checkout.html">Checkout</a></li>
+          <button id="toggle-button">Close</button>
+        </ul>
+      </nav>
+      <a
+        href="#"
+        id="logo-link">
+        <img
+          src="../../images/TRANSPARENT.png"
+          alt="Website Logo"
+          id="logo-image" />
+      </a>
+      <div class="cart-icon">
+        <div class="cart-icon">
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+        <span class="cart-count">0</span>
+      </div>
+    </header>
+    <script src="review.js"></script>
+    <h1>Customer Reviews</h1>
+    <div class="review-container">
+      <div class="review-wrapper">
+        <div class="review"></div>
+        <div class="review"></div>
+      </div>
+
+      <div class="review-wrapper">
+        <div class="review"></div>
+        <div class="review"></div>
+      </div>
+      <div class="review-wrapper">
+        <div class="review"></div>
+        <div class="review"></div>
+      </div>
+    </div>
+  </body>
+</html>

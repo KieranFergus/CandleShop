@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,35 +6,78 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0" />
     <title>Candle Business</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link
       rel="stylesheet"
       href="styles.css" />
-    <link
-      rel="stylesheet"
-      href="styles.css" />
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Poppins&display=swap
+    (https://fonts.googleapis.com/css?family=Poppins&display=swap)"">
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"></script>
   </head>
   <body>
     <header>
+      <div class="menu-icon">
+        <i class="fas fa-bars"></i>
+      </div>
+      <script>
+        $(document).ready(() => {
+          $(".menu-icon").on("click", () => {
+            $(".menu").toggleClass("open");
+            return false;
+          });
+          $("#toggle-button").on("click", () => {
+            $(".menu").toggleClass("open");
+          });
+        });
+      </script>
+      <nav class="menu">
+        <h2>Menu</h2>
+        <ul>
+          <li><a href="catalog.html">Catalog</a></li>
+          <li><a href="makeYourOwn.html">Make Your Own</a></li>
+          <li><a href="aboutUs.html">About Us</a></li>
+          <li><a href="customerReview.html">Customer Review</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="checkout.html">Checkout</a></li>
+          <button id="toggle-button">Close</button>
+        </ul>
+      </nav>
       <a
         href="#"
         id="logo-link">
         <img
-          src="images/logo.png"
+          src="images/TRANSPARENT.png"
           alt="Website Logo"
           id="logo-image" />
       </a>
-      <nav>
-        <ul>
-          <li><a href="#">Catalog</a></li>
-          <li><a href="makeYourOwn.html">Make Your Own</a></li>
+      <a
+        href="checkout.html"
+        id="cart-link"
+        style="all: unset">
+        <div class="cart-icon">
+          <div class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <span class="cart-count">0</span>
+        </div>
+      </a>
+      <script>
+        var cart = [];
 
-          <li><a href="aboutUs.html">About Us</a></li>
-          <li><a href="#">Customer Review</a></li>
+        //Loading the cart
+        $(window).on("load", function () {
+          cart = JSON.parse(localStorage.getItem("cart"));
 
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Checkout</a></li>
-        </ul>
-      </nav>
+          $(".cart-count").html(cart.length);
+        });
+      </script>
     </header>
 
     <main>

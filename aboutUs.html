@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,48 +9,200 @@
     <link
       rel="stylesheet"
       href="styles.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="styles.css" />
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Poppins&display=swap
+    (https://fonts.googleapis.com/css?family=Poppins&display=swap)"">
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"></script>
+
       <style>
         main {
             background-color: #A9BA9D;
             padding: 1px;
+            color: #fff;
+            font-family: 'Poppins' sans-serif;
+        }
+        .about {
+          text-align: center;
+          color: #fff;
+        }
+
+        #ab{
+          font-size: 40px;
+        }
+
+        #ab2 {
+          text-align: center;
+          width: 70vw;
+          margin-left: 15vw;
+          margin-right: 15vw;
+          font-size: 22px;
+          line-height: 32px;
+        }
+
+        hr {
+          background-color: #444;
+          width: 100vw;
+        }
+
+
+        #img1, #img2 {
+          width: 80vw;
+          margin-left: 10vw;
+          margin-right: 10vw;
+          max-height: 50vh;
+          max-width: 600px;
+          position: relative;
+        }
+
+        #img2 {
+          display: none;
+        }
+
+        #about {
+          text-align: center;
+          position: relative;
+          width: 100vw;
+        }
+
+        #wrap2 {
+          display: flexbox;
+          position: relative;
+          width: 100vw;
+        }
+
+        #caption {
+          text-align: center;
+          margin: 0 auto;
+          font-family: 'Poppins' sans-serif;
+          font-size: 20px;
+          font-weight: 300;
+          transition: 0.1s ease-in;
+          font-style: oblique;
+          cursor: pointer;
+        }
+
+        #caption:hover {
+          transform: scale(1.02, 1.02);
+          color:#333;
+        }
+
+        #ab1 {
+          font-size: 30px;
+          font-weight: 500;
+          font-style: italic;
         }
     </style>
   </head>
   <body>
     <header>
+      <div class="menu-icon">
+        <i class="fas fa-bars"></i>
+      </div>
+      <script>
+        $(document).ready(() => {
+          $(".menu-icon").on("click", () => {
+            $(".menu").toggleClass("open");
+            return false;
+          });
+          $("#toggle-button").on("click", () => {
+            $(".menu").toggleClass("open");
+          });
+        });
+      </script>
+      <nav class="menu">
+        <h2>Menu</h2>
+        <ul>
+          <li><a href="catalog.html">Catalog</a></li>
+          <li><a href="makeYourOwn.html">Make Your Own</a></li>
+          <li><a href="aboutUs.html">About Us</a></li>
+          <li><a href="customerReview.html">Customer Review</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="checkout.html">Checkout</a></li>
+          <button id="toggle-button">Close</button>
+        </ul>
+      </nav>
       <a
-        href="homepage.html"
+        href="homepage/midterm/homepage.html"
         id="logo-link">
         <img
-          src="images/logo.png"
+          src="images/TRANSPARENT.png"
           alt="Website Logo"
           id="logo-image" />
       </a>
-      <nav>
-        <ul>
-          <li><a href="#">Catalog</a></li>
-          <li><a href="makeYourOwn.html">Make Your Own</a></li>
+      <a href="checkout.html" id="cart-link" style="all:unset">
+        <div class="cart-icon">
+          <div class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <span class="cart-count">0</span>
+        </div>
+      </a>
+      <script>
+        var cart = [];
 
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Customer Review</a></li>
+        //Loading the cart 
+        $(window).on("load", function() {
+            cart = JSON.parse(localStorage.getItem("cart"));
+            
+            $(".cart-count").html(cart.length);
+            
 
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Checkout</a></li>
-        </ul>
-      </nav>
+        })
+      </script>
+      </div>
     </header>
 
     <main>
-      <h2 class="about"><br><br>Whispering Wax Candles</h2>
+      <h1 class="about" id="ab"><br>Whispering Wax Candles<br></h1>
+      <h2 class="about" id="ab1">&nbsp; About Us<br></h2>
       <p class="about" id="ab2">
-        Here at Whispering Wax Candles, we pride ourselves on making the finest candles with only natural materials.
-        <br><br><br><br><br>
+        Here at Whispering Wax Candles, we pride ourselves on making the finest candles with only natural materials. 
+        All of our ingredients are organically sourced from a variety of local producers. We caringly hand-craft each candle here in Medford/Somerville, Massachusetts. 
+        Explore our collection, and join us on this fragrant journey.
+        <br><br>
+        Thank you for being a part of the Whispering Wax family!
+
+
+        <br><br><br>
         <hr>
         <br>
       </p>
-      <img id="founders" src="images/founders.jpeg">
-      <p class="about" id="caption">Founders</p>
+      
+      <div class="about" id="imgs">
+        <br>
+        <img id="img1" src="images/candul.jpg">
+        <img id="img2" src="images/founders2.jpg">
+        
+        <br><br>
+        <div id="wrap2">
+          <h5 id="caption">Click me for a surprise!</h5>
+        </div>
+        <br>
+        <br><br>
+        
+      </div>
     </main>
+
+    <script>
+      $('#caption').click(function() {
+        $('#img1').fadeOut(600);
+        $('#img2').delay(550).fadeIn(600);
+        $('#caption').hide();
+        $('#caption').fadeIn(1500);
+        $('#caption').html("The Founders!");
+      })
+     </script>
+
 
     <footer>
       <div class="footer-content">

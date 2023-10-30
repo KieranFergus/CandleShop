@@ -1,0 +1,160 @@
+<!DOCTYPE html> 
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Candle Business</title>
+    <link
+      rel="stylesheet"
+      href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"></script>
+
+    <style>
+        
+        .product{
+          width: 100%; height: 100px;
+          border: 1px black solid;
+          list-style: none;
+          border-radius: 30px;
+          margin-top: 30px; margin-bottom: 30px;
+          display: flex;
+        }
+
+        .image {
+          border: 1px solid black;
+          height: inherit; width: 20%;
+          border-radius: 30px 0 0 30px;
+        }
+
+        .info {
+          border: 1px solid red;
+          height: inherit; width: 80%;
+          border-radius: 0 30px 30px 0;
+          position: relative;
+          padding: 10px;
+          box-sizing: border-box;
+
+        }
+
+        .title{
+          width: 40%;
+        }
+
+        .pricing {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex; 
+          width: 50%;
+          position: absolute;
+          top: 30px; right: 0;
+        }
+      
+        .pricing li {
+            margin-right: 40px; 
+            text-align: center;
+        }
+
+        #message {
+          position: absolute;
+
+        }
+
+        #total {
+          border: 1px solid black;
+          border-radius: 30px;
+          width: 100%; max-width: 300px;
+          height: 100px;
+          float: right;
+        }
+
+    </style>
+
+  </head>
+  <body>
+    <header>
+      <div class="menu-icon">
+        <i class="fas fa-bars"></i>
+      </div>
+      <script>
+        $(document).ready(() => {
+          $(".menu-icon").on("click", () => {
+            $(".menu").toggleClass("open");
+            return false;
+          });
+          $("#toggle-button").on("click", () => {
+            $(".menu").toggleClass("open");
+          });
+        });
+      </script>
+      <nav class="menu">
+        <ul>
+          <li><a href="catalog.html">Catalog</a></li>
+          <li><a href="makeYourOwn.html">Make Your Own</a></li>
+
+          <li><a href="aboutUs.html">About Us</a></li>
+          <li><a href="#">Customer Review</a></li>
+
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="checkout.html">Checkout</a></li>
+          <button id="toggle-button">Close</button>
+        </ul>
+      </nav>
+      <a
+        href="homepage/midterm/homepage.html"
+        id="logo-link">
+        <img
+          src="images/TRANSPARENT.png"
+          alt="Website Logo"
+          id="logo-image" />
+      </a>
+      <a href="checkout.html" id="cart-link" style="all:unset">
+        <div class="cart-icon">
+          <div class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <span class="cart-count">0</span>
+        </div>
+      </a>
+    </header>
+
+    <main>
+      
+      <div style="display: flex; justify-content: center;"> <h1 style=" border-bottom: 3px black solid; width: fit-content;">Checkout</h1></div>
+      <div id="message">Your Cart Is Empty</div>
+      <ul id="checkout" style="padding: 0;"></ul>
+      
+      <div>
+        <div id="total">total</div>
+        <div id="buy">buy</div>
+        <div id="clearCart">clear cart</div>
+
+
+      </div>
+
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2023 Whispering Wax</p>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="checkout.js"></script>
+  </body>
+</html>
