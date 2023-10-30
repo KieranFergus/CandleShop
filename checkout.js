@@ -1,9 +1,10 @@
 /* Candle Class */
-function Product(name, cost, qty, description){
+function Product(name, cost, qty, description, image){
     this.name = name;
     this.cost = cost;
     this.quantity = qty;
     this.description = description;
+    this.image = image;
 }
 
 
@@ -40,6 +41,10 @@ function createCheckout(){
         info.addClass("info");
         title.addClass("title");
         pricing.addClass("pricing")
+
+        image.css("background-image", `url('${item.image}')`);
+        image.css("background-size", "cover");
+        image.css("background-position", "center");
 
         let cost = $("<li>").html("Cost: <br>$" + item.cost);
         cost.addClass(".pricing li");
