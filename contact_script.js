@@ -3,7 +3,7 @@ $(() => {
 });
 
 function checkForm() {
-  alert("checkform");
+  
   return (
     checkEmail($("#email")) &&
     checkName($("#name")) &&
